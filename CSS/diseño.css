@@ -9,14 +9,14 @@ body{
 
 .logo{
     width: 400px;
+    cursor: pointer;
 }
 
 header{
-    width: 100%;
-    position: fixed;
-    background-color: white;
-    /* background: #f8c497; */
-    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
 }
 
 nav{
@@ -27,4 +27,39 @@ li, a{
     text-decoration: none;
     color: black;
     font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.nav_elements{
+    list-style: none;
+}
+
+.nav_elements li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_elements li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav_elements li a:hover{
+    color: #f3882a;
+}
+
+button{
+    padding: 7px 20px;
+    background-color: #f3882a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+button:hover{
+    background-color: #ffa95d;
 }
