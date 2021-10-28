@@ -8,15 +8,20 @@ body{
 }
 
 .logo{
-    width: 400px;
+    width: 300px;
     cursor: pointer;
 }
 
 header{
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
+    padding: 20px;
+    height: 45px;
+    width: 97%;
+    position:fixed; /*No desaparezca el header*/
+    z-index: 1; /*Capa #1, para colocar el header arriba del div*/
 }
 
 nav{
@@ -25,10 +30,11 @@ nav{
 
 li, a{
     text-decoration: none;
-    color: black;
+    color:black;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
+    /*font-weight: bold;*/
 }
 
 .nav_elements{
@@ -37,7 +43,7 @@ li, a{
 
 .nav_elements li{
     display: inline-block;
-    padding: 0px 20px;
+    padding: 0px 35px;
 }
 
 .nav_elements li a{
@@ -45,12 +51,12 @@ li, a{
 }
 
 .nav_elements li a:hover{
-    color: #f3882a;
+    color: #8cad24;
 }
 
 button{
     padding: 7px 20px;
-    background-color: #f3882a;
+    background-color: #8cad24;
     color: white;
     border: none;
     cursor: pointer;
@@ -58,8 +64,19 @@ button{
     transition: all 0.3s ease 0s;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
+    font-weight: bold;
 }
 
 button:hover{
-    background-color: #ffa95d;
+    background-color: #6c851d;
+}
+
+.one{
+    height: 700px;
+    background-image: url(../IMAGENES/siora-photography-cixohzDpNIo-unsplash.jpg);
+    background-size: cover;
+    /*opacity: 0.6;*/
+    filter: brightness(0.6);
+    position: relative;
+    
 }
