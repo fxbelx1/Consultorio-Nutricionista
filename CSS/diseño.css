@@ -125,40 +125,49 @@ button:hover{
 }
 
 .servicios{
-    height: 635px;
+    text-align: center;
+    height: 550px;
+}
+
+.cont_servicios{
+    height: 420px;
     background-color: #E4E4E4;
     display: flex;
     justify-content:center;
+    margin-top: 50px;
 }
 
 .ser1{
-    /*width: 430px;
-    height: 430px;*/
-    width: 33.33%;
-    height: 635px;
+    width: 32.5%;
+    height: 400px;
     background-color: #FAF1E6;
     text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .ser2{
-    /*width: 430px;
-    height: 430px;*/
-    width: 33.33%;
-    height: 635px;
+    width: 32.5%;
+    height: 400px;
     background-color: #FDFAF6;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .ser3{
-    /*width: 430px;
-    height: 430px;*/
-    width: 33.33%;
-    height: 635px;
+    width: 32.5%;
+    height: 400px;
     background-color: #E4EFE7;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .servicios img{
     width: 100px;
     margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .servicios h1{
@@ -170,5 +179,73 @@ button:hover{
 
 .servicios p{
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+}
+
+.contacto{
+    width: 100%;
+    height: 550px;
+    background-color: black;
+}
+
+.contacto h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    color: white;
+}
+
+.contacto p{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.titulo{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.tel_correo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.tel_correo img{
+    width: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tel{
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.correo{
+    width: 300px;
+    height: 300px;
+    background-color:black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont{
+    text-align: center;
+}
+
+.cont h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.cont p{
+    font-family: 'Poppins', sans-serif;
+    color: white;
 }
