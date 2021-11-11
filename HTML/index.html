@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultorio Nutricional</title>
-    <link rel="stylesheet" href="../CSS/diseño.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Consultorio Nutricional</title>
+        <link rel="stylesheet" href="../CSS/index_diseño.css">
 
-    <!------------------------ FUENTES ------------------------->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">  
+        <!------------------------ FUENTES ------------------------->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">  
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">  
-     
-</head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">   
+    </head>
 
 <body>
     <!------------------------ HEADER ------------------------->
@@ -26,9 +25,9 @@
             <ul class="nav_elements">
                 <!--Inicio, servicios, iniciar sesión, contacto-->
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a class="isesion" href="#"><button>Iniciar sesión</button></a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a class="isesion" href="../HTML/login.html"><button>Iniciar sesión</button></a></li>
             </ul>
         </nav> 
     </header>
@@ -38,16 +37,21 @@
         <div class="iz">
             <div class="iz_imagen"><img src="../IMAGENES/brooke-lark-jUPOXXRNdcA-unsplash (2).jpg" alt="Imagen de comida"></div>
         </div>
-            
+                
         <div class="der">
             <h1>Cuando comes bien te sientes bien</h1>
             <p>Texto de prueba Texto de prueba Texto de prueba Texto de prueba Texto de prueba Texto de prueba</p>
-            <a class="a_simple" href="#">Ir hacia abajo </a>
-        </div>    
+            <a class="a_simple" href="#servicios">Conoce nuestros servicios </a> <!--a_simple-->
+        </div>
+            
     </div>
 
     <!------------------------ SERVICIOS ------------------------->
     <div class="servicios">
+        <div class="hiper">
+            <a id="servicios">texto a</a>
+        </div>
+
         <div class="cont_servicios">
             <div class="ser1">
                 <div>
@@ -75,12 +79,15 @@
         </div>
 
         <p>Para mas información puede comunicarse con nosotros</p>
-        <a class="isesion" href="#"><button>Contacto</button></a>
+        <a class="isesion" href="#contacto"><button>Contacto</button></a>
     </div>
 
     <!------------------------ CONTACTO ------------------------->
     <div class="contacto">
-        <br><br>
+        <div class="hiper">
+            <a id="contacto" style="color: black;">texto a</a>
+        </div>
+
         <div class="titulo">
             <h1>Contacto</h1>
             <p>Si desea mas información o agendar una cita puede comunicarse a través de los siguientes medios: </p>
@@ -102,10 +109,15 @@
                     <p>olaaaaaaaaaaa@gmail.com</p>
                 </div>
             </div>
-        </div>
 
-        
-        
+            <div class="correo">
+                <div class="cont">
+                    <h1>Instagram</h1>
+                    <img src="../IMAGENES/insta.png">
+                    <p>Cameron.Coats</p>
+                </div>
+            </div>
+        </div>     
     </div>
    
 </body>

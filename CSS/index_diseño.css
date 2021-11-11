@@ -1,4 +1,8 @@
 /*TODA LA PAGINA*/
+html{
+    scroll-behavior: smooth;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -52,7 +56,7 @@ header{
     color: #bbb8b8;
 }
 
-button{
+.nav_elements button{
     padding: 6px 20px;
     background-color: black;
     color: white;
@@ -64,7 +68,7 @@ button{
     font-size: 16px;
 }
 
-button:hover{
+.nav_elements button:hover{
     background-color: #bbb8b8;
 }
 
@@ -72,11 +76,14 @@ button:hover{
 .inicio{
     height: 635px;
     background-color: #E4E4E4;
-    /*position: relative; */
     display: flex;
     align-items: center;
-    /*justify-content: center; 
-    text-align: center;*/
+    
+}
+
+.iz_der{
+    display: flex;
+    align-items: center;
 }
 
 .iz{
@@ -124,18 +131,47 @@ button:hover{
     font-weight: bold;
 }
 
+/*SECCIÓN DE SERVICIOS*/
+
 .servicios{
     text-align: center;
-    height: 550px;
+    height: 700px;
+    background-color: transparent;
+}
+
+.hiper{
+    width: 100%;
+    height: 120px;
+}
+
+.hiper a{
+    color: #E4E4E4;
 }
 
 .cont_servicios{
     height: 420px;
-    background-color: #E4E4E4;
+    background-color: transparent;
     display: flex;
     justify-content:center;
-    margin-top: 50px;
+    /*margin-top: 100px;*/
 }
+
+.servicios button{
+    padding: 6px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.servicios button:hover{
+    background-color: #bbb8b8;
+}
+
 
 .ser1{
     width: 32.5%;
@@ -184,7 +220,7 @@ button:hover{
 
 .contacto{
     width: 100%;
-    height: 550px;
+    height: 700px;
     background-color: black;
 }
 
@@ -209,6 +245,7 @@ button:hover{
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 55px;
 }
 
 .tel_correo img{
@@ -248,4 +285,72 @@ button:hover{
 .cont p{
     font-family: 'Poppins', sans-serif;
     color: white;
+}
+
+
+/*/////////////////////////////////////////// LOGIN ////////////////////////////////////////////////*/
+
+
+.principal{
+    width: 100%;
+    height: 230px;
+    text-align: center;
+}
+
+.principal h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color: black;
+}
+
+.principal p{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+.cont_formulario{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario{
+    width: 250px;
+}
+
+.formulario label{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+.formulario input{
+    margin-bottom: 35px;
+    width: 100%;
+    background-color: #E4E4E4;
+    padding: 15px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-size: 15px;
+    text-align: center;
+}
+
+.formulario button{
+    padding: 6px 25px;
+    width: 280px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.formulario button:hover{
+    background-color: #bbb8b8;
 }
