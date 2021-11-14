@@ -35,6 +35,49 @@
         </nav> 
     </header>
     <!------------------------ HEADER ------------------------->
+
+    <div class="lp_cont">
+        <br><br><br><br><br><br><br>
+        <table class="buscador">
+            <tr>
+                <td><p>Buscar por:</p></td>
+                <td>
+                    <select>
+                        <option value="nombre">Nombre</option>
+                        <option value="id">Id</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" class="busqueda" name="busqueda" placeholder="Ingrese el dato a buscar">
+                </td>
+                <td><button type="submit" class="buscar">Buscar</button></td>
+                <td><button type="submit" class="npaciente">Nuevo paciente</button></td>
+            </tr>
+        </table>
+
+        <br><br>
+        <table class="datos">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th style="color: white;">Expediente</th>
+                <th style="color: white;">Nueva consulta</th>
+                <th style="color: white;">Actualizar Menú</th>
+            </tr>
+
+            <!--Aqui comenzaria el php (while) para repetir el tr hasta que se muestren todos los datos de la tabla-->
+            <tr>
+                <td><p>3784</p></td>
+                <td><p>Nombre De Prueba Xd</p></td>
+                <td><p>7898765456</p></td>
+                <td><a href="#">Expediente</a></td>
+                <td><a href="#">Nueva consulta</a></td>
+                <td><a href="#">Actualizar menú</a></td>
+            </tr>
+        </table>
+
+    </div>
     
 </body>
 </html>
