@@ -1,3 +1,17 @@
+<?php
+$servername = "localhost";
+$database = "nutrisystem";
+$username = "root";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,7 +41,7 @@
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a class="isesion" href="../HTML/login.html"><button>Iniciar sesión</button></a></li>
+                <li><a class="isesio" href="../HTML/login.php"><button>Iniciar sesión</button></a></li>
             </ul>
         </nav> 
     </header>
@@ -114,7 +128,7 @@
                 <div class="cont">
                     <h1>Instagram</h1>
                     <img src="../IMAGENES/insta.png">
-                    <p>Cameron Coats</p>
+                    <p>Cameron.Coats</p>
                 </div>
             </div>
         </div>     

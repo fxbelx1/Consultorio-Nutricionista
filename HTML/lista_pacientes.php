@@ -1,3 +1,17 @@
+<?php
+$servername = "localhost";
+$database = "nutrisystem";
+$username = "root";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +66,7 @@
                     <input type="text" class="busqueda" name="busqueda" placeholder="Ingrese el dato a buscar">
                 </td>
                 <td><button type="submit" class="buscar">Buscar</button></td>
-                <td><button type="submit" class="npaciente">Nuevo paciente</button></td>
+                <td><button type="submit" class="npaciente"><a href="../HTML/registrar_paciente.php">Nuevo paciente</a></button></td>
             </tr>
         </table>
 

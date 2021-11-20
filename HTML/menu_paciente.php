@@ -1,3 +1,17 @@
+<?php
+$servername = "localhost";
+$database = "nutrisystem";
+$username = "root";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -679,7 +693,7 @@
                 </tr>
             </table>
             <br><br>
-            <button class="boton2">Guardar y terminar consulta</button> 
+            <button class="boton2"><a href="../HTML/lista_pacientes.php">Guardar y terminar consulta</a></button> 
         </div>
     </div>
 </div>

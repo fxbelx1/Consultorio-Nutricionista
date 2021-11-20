@@ -1,3 +1,17 @@
+<?php
+$servername = "localhost";
+$database = "nutrisystem";
+$username = "root";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -188,7 +202,7 @@
                 </div>
             </form>
             <br><br><br><br><br><br><br><br><br><br><br>
-            <button class="boton2">Guardar Datos</button> 
+            <button class="boton2"><a href="../HTML/menu_paciente.php">Guardar Datos</a></button> 
         </div>
         <!------------------------ CALCULOS ANTROPOMETRICOS (DERECHA) ------------------------->
     <!--</div>-->
