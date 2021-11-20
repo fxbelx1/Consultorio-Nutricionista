@@ -54,7 +54,7 @@ mysqli_close($conn);
 
     <!------------------------ FORM INICIO DE SESIÓN PACIENTE ------------------------->
     <div class="cont_formulario">
-        <form class="formulario" action="#" method="#">
+        <form class="formulario" action="verificaciondb.php" method="POST">
             <div>
                 <!--<label for="id">Id:</label>-->
                 <input type="text" id="id" name="id_nutriologa" placeholder="Ingrese su Id">
