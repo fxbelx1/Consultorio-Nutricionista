@@ -53,10 +53,6 @@
 
                 <!--<button type="submit"><a href="#">Iniciar Sesión</a></button>-->
 
-              
-
-                <button type="sumbit"><a href="#">Iniciar Sesión</a></button>
-
                 
 
           
