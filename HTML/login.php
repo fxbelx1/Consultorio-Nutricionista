@@ -54,15 +54,17 @@ mysqli_close($conn);
 
     <!------------------------ FORM INICIO DE SESIÓN PACIENTE ------------------------->
     <div class="cont_formulario">
-        <form class="formulario" action="verificaciondb.php" method="POST">
+        <form class="formulario" action="Verificacion_login.php" method="POST">
             <div>
                 <!--<label for="id">Id:</label>-->
-                <input type="text" id="id" name="id_nutriologa" placeholder="Ingrese su Id">
+                <input type="text" id="id" name="id_nutriologa" placeholder="Ingrese su Id" class="ctexto">
 
                 <!--<label for="pass">Contraseña:</label>-->
-                <input type="password" id="pass" name="pass_nutriologa" placeholder="Ingrese su contraseña">
+                <input type="password" id="pass" name="pass_nutriologa" placeholder="Ingrese su contraseña" class="ctexto">
 
-                <button type="submit"><a href="../HTML/lista_pacientes.php">Iniciar Sesión</a></button>
+                <input type="submit">
+
+                <!--<button type="submit"><a href="#">Iniciar Sesión</a></button>-->
             </div>
         </form>
 
