@@ -54,7 +54,7 @@ mysqli_close($conn);
                 
         <div class="der">
             <h1>Cuando comes bien te sientes bien</h1>
-            <p>Texto de prueba Texto de prueba Texto de prueba Texto de prueba Texto de prueba Texto de prueba</p>
+            <p>Tu que requieres de sentirte bien saludablemente, ven y encuentra esa forma con nosotros.</p>
             <a class="a_simple" href="#servicios">Conoce nuestros servicios </a> <!--a_simple-->
         </div>
             
@@ -71,7 +71,7 @@ mysqli_close($conn);
                 <div>
                     <img src="../IMAGENES/ico_peso.png">
                     <h1>Control del peso</h1>
-                    <p>Texto de prueba Texto de prueba Texto de prueba Texto de prueba Texto de prueba</p>
+                    <p>Alcanzar un peso saludable puede ayudarlo a controlar el colesterol, la presión arterial y el azúcar en la sangre.</p>
                 </div>
             </div>
     
@@ -79,7 +79,7 @@ mysqli_close($conn);
                 <div>
                     <img src="../IMAGENES/ico_salud.png">
                     <h1>Control de enfermedades</h1>
-                    <p>Texto de prueba Texto de prueba Texto de prueba Texto de prueba Texto de prueba</p>
+                    <p>Evita todo tipo de enfermedades que tengan que ver con la obesidad.</p>
                 </div>
             </div>
     
@@ -87,7 +87,7 @@ mysqli_close($conn);
                 <div>
                     <img src="../IMAGENES/ico_vida.png">
                     <h1>Estilo de vida saludable</h1>
-                    <p>Texto de prueba Texto de prueba Texto de prueba Texto de prueba Texto de prueba</p>
+                    <p>Obten consejos para una vida saludable y energetica.</p>
                 </div>
             </div>
         </div>
@@ -120,7 +120,7 @@ mysqli_close($conn);
                 <div class="cont">
                     <h1>Correo</h1>
                     <img src="../IMAGENES/correo.png">
-                    <p>olaaaaaaaaaaa@gmail.com</p>
+                    <p>Cameron.coats2606@gmail.com</p>
                 </div>
             </div>
 

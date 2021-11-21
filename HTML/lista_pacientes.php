@@ -83,9 +83,9 @@ mysqli_close($conn);
 
             <!--Aqui comenzaria el php (while) para repetir el tr hasta que se muestren todos los datos de la tabla-->
             <tr>
-                <td><p>3784</p></td>
-                <td><p>Nombre De Prueba Xd</p></td>
-                <td><p>7898765456</p></td>
+                <td><p>001</p></td>
+                <td><p>Eduardo</p></td>
+                <td><p>123456789</p></td>
                 <td><a href="#">Expediente</a></td>
                 <td><a href="#">Nueva consulta</a></td>
                 <td><a href="#">Actualizar menú</a></td>

@@ -1,17 +1,3 @@
-<?php
-$servername = "localhost";
-$database = "nutrisystem";
-$username = "root";
-$password = "";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-mysqli_close($conn);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -62,9 +48,14 @@ mysqli_close($conn);
                 <!--<label for="pass">Contraseña:</label>-->
                 <input type="password" id="pass" name="pass_nutriologa" placeholder="Ingrese su contraseña" class="ctexto">
 
+<<<<<<< HEAD
                 <input type="submit">
 
                 <!--<button type="submit"><a href="#">Iniciar Sesión</a></button>-->
+=======
+              
+                <button type="submit"><a href="lista_pacientes.php">Iniciar Sesión</a></button>
+>>>>>>> a1b4ae153803bc649cb35bf168dc787b43f44b98
             </div>
         </form>
 
