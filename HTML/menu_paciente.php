@@ -91,15 +91,13 @@ mysqli_close($conn);
         <div class="calculos">
 
             <div>
-                <div class="calculos1">
+            <div class="calculos1">
                     <table border="1" width="900">
                         <tr>
                             <td>
 
                             </td>
-                            <td width="400">
-
-                            </td>
+                           
                             <td>
                                 <label>Eq</label> 
                             </td>
@@ -135,9 +133,7 @@ mysqli_close($conn);
                          <td>
 
                          </td>
-                         <td>
-
-                         </td>
+                         
                      </tr>
                      <tr>
                         <td>
@@ -158,9 +154,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                       
                     </tr>
                     <tr>
                         <td>
@@ -181,9 +175,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                      
                     </tr>
                     <tr>
                         <td>
@@ -204,9 +196,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                       
                     </tr>
                     <tr>
                         <td>
@@ -227,9 +217,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                      
                     </tr>
                     <tr>
                         <td>
@@ -250,9 +238,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                       
                     </tr>
                     <tr>
                         <td>
@@ -273,9 +259,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                     
                     </tr>
                     <tr>
                         <td>
@@ -296,9 +280,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                       
                     </tr>
                     <tr>
                         <td>
@@ -319,9 +301,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                        
                     </tr>
                     <tr>
                         <td>
@@ -342,9 +322,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                       
                     </tr>
                     <tr>
                         <td>
@@ -365,9 +343,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                       
                     </tr>
                     <tr>
                         <td>
@@ -388,9 +364,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                        
                     </tr>
                     <tr>
                         <td>
@@ -411,9 +385,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                      
                     </tr>
                     <tr>
                         <td>
@@ -434,37 +406,10 @@ mysqli_close($conn);
                         <td>
 
                         </td>
-                        <td>
-
-                        </td>
+                       
                     </tr>
-                    <tr height="25">
-                        <td>
 
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                    </tr>
                     <tr>
-                        <td>
-
-                        </td>
                         <td>
 
                         </td>
@@ -472,7 +417,7 @@ mysqli_close($conn);
                             <label>Suma</label> 
                         </td>
                         <td>
-
+                            
                         </td>
                         <td>
 
@@ -483,11 +428,9 @@ mysqli_close($conn);
                         <td>
 
                         </td>
+                        
                     </tr>
                     <tr>
-                        <td>
-
-                        </td>
                         <td>
 
                         </td>
@@ -495,7 +438,7 @@ mysqli_close($conn);
                             <label>Meta</label> 
                         </td>
                         <td>
-
+                            
                         </td>
                         <td>
 
@@ -506,11 +449,9 @@ mysqli_close($conn);
                         <td>
 
                         </td>
+                        
                     </tr>
                     <tr>
-                        <td>
-
-                        </td>
                         <td>
 
                         </td>
@@ -518,7 +459,7 @@ mysqli_close($conn);
                             <label>%</label> 
                         </td>
                         <td>
-
+                            
                         </td>
                         <td>
 
@@ -529,6 +470,7 @@ mysqli_close($conn);
                         <td>
 
                         </td>
+                        
                     </tr>
                 </table>
             </div>
@@ -693,7 +635,7 @@ mysqli_close($conn);
                 </tr>
             </table>
             <br><br>
-            <button class="boton2"><a href="../HTML/lista_pacientes.php">Guardar y terminar consulta</a></button> 
+            <button class="boton2">Guardar y terminar consulta</button> 
         </div>
     </div>
 </div>
