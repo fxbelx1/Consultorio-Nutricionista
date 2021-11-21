@@ -43,15 +43,25 @@
         <form class="formulario" action="Verificacion_login.php" method="POST">
             <div>
                 <!--<label for="id">Id:</label>-->
-                <input type="text" id="id" name="id_nutriologa" placeholder="Ingrese su Id">
+                <input type="text" id="id" name="id_nutriologa" placeholder="Ingrese su Id" class="ctexto">
 
                 <!--<label for="pass">Contraseña:</label>-->
-                <input type="password" id="pass" name="pass_nutriologa" placeholder="Ingrese su contraseña">
+                <input type="password" id="pass" name="pass_nutriologa" placeholder="Ingrese su contraseña" class="ctexto">
 
+<<<<<<< HEAD
+                <input type="submit">
+
+                <!--<button type="submit"><a href="#">Iniciar Sesión</a></button>-->
+=======
               
+<<<<<<< HEAD
                 <button type="sumbit"><a href="#">Iniciar Sesión</a></button>
 
                 
+=======
+                <button type="submit"><a href="lista_pacientes.php">Iniciar Sesión</a></button>
+>>>>>>> a1b4ae153803bc649cb35bf168dc787b43f44b98
+>>>>>>> 33680355cfc6d889e5d75eaab72f730d87bc14e9
             </div>
         </form>
 
