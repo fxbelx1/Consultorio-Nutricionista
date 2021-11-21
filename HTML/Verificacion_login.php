@@ -5,13 +5,11 @@
     $usuario = $_POST['id_nutriologa'];
     $contrasena = $_POST['pass_nutriologa'];
 
-    $query = mysqli_query($conexion, "SELECT * FROM Nutriologa WHERE Usuario = '$usuario' and Contraseña = '$contrasena' ");
+    $query = mysqli_query($conexion, "SELECT * FROM nutrióloga WHERE Usuario = '$usuario' and Contraseña = '$contrasena' ");
     $nr = mysqli_num_rows($query);
 
-    if 
-
-   /* if($nr == 1){
-        $_SESSION['username'] = $usuario;
+   if($nr == 1){
+        $_SESSION['nutrióloga'] = $usuario;
         header("Location: lista_pacientes.php");
     }
     else if($nr == 0) {

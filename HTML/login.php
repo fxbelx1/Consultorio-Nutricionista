@@ -49,7 +49,9 @@
                 <input type="password" id="pass" name="pass_nutriologa" placeholder="Ingrese su contraseña">
 
               
-                <button type="submit"><a href="lista_pacientes.php">Iniciar Sesión</a></button>
+                <button type="sumbit"><a href="#">Iniciar Sesión</a></button>
+
+                
             </div>
         </form>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2021 a las 01:10:21
+-- Tiempo de generación: 21-11-2021 a las 19:27:22
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.12
 
@@ -28,12 +28,16 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `consulta` (
+  `id_consulta` int(50) NOT NULL,
   `Peso` varchar(10) NOT NULL,
   `Estatura` varchar(10) NOT NULL,
   `IMC` varchar(10) NOT NULL,
   `Grasa` varchar(10) NOT NULL,
   `Masa_Mus` varchar(10) NOT NULL,
-  `Kcal` varchar(10) NOT NULL
+  `Kcal` varchar(10) NOT NULL,
+  `Pro` int(10) NOT NULL,
+  `Lip` int(10) NOT NULL,
+  `HCO` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -60,6 +64,21 @@ CREATE TABLE `info_paciente` (
   `Act_Fisica` int(10) NOT NULL,
   `Tabaco` int(10) NOT NULL,
   `Alcohol` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu`
+--
+
+CREATE TABLE `menu` (
+  `Desayuno` varchar(100) NOT NULL,
+  `Colación 1` varchar(100) NOT NULL,
+  `Comer` varchar(100) NOT NULL,
+  `Colación 2` varchar(100) NOT NULL,
+  `Cena` varchar(100) NOT NULL,
+  `id_menú` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
