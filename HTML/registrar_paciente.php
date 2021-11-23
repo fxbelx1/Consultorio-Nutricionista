@@ -1,3 +1,6 @@
+<?php
+    include("registro_p.php"); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +40,7 @@
     <br><br><br><br><br><br>
     <div class="contenido2">
         <div class="izquierda">
-        <form class="formconsu">
+        <form class="formconsu" action="registrar_paciente.php" method="POST">
 
                 <p class="encabezados">Nuevo Paciente</p>
 
@@ -120,7 +123,7 @@
 
 
         <div class="derecha">
-        <form class="formconsu2">
+        <form class="formconsu2" action="registrar_paciente.php" method="POST" >
 
                     <table class="tablas">
                     <TR>
@@ -165,13 +168,14 @@
                         <TD>        
                         <p>Consume alcohol:</p>            
                               <label for="html" class="radio">Si</label>
-                              <input type="radio" id="css" name="fav_language"><br>
+                              <input type="radio" id="css" name="fav_language" value="CSS"><br>
                                 <label for="html" class="radio">No</label>
-                              <input type="radio" id="css" name="fav_language">
+                              <input type="radio" id="css" name="fav_language" value="CSS">
                         </TD> 
                     </TR>
                     </table><br><br><br>
-                    <button class="boton3"><a href="../HTML/consulta_paciente.php">Registrar paciente</a></button>
+                    <input type="submit">
+                   <!-- <button class="boton3"><a href="../HTML/consulta_paciente.php">Registrar paciente</a></button> -->
         </form>
         </div> 
         </div> 
