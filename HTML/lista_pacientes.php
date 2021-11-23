@@ -1,15 +1,11 @@
 <?php
-$servername = "localhost";
-$database = "nutrisystem";
-$username = "root";
-$password = "";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-mysqli_close($conn);
+    session_start();
+    $usuario = $_SESSION['ola'];
+
+    if(isset($_POST['logout'])){
+        session_destroy();
+        header("location: login.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -36,28 +32,31 @@ mysqli_close($conn);
 
 <body>
     <!------------------------ HEADER ------------------------->
-    <header>
-        <img class="logo" src="../IMAGENES/logo7.png" alt="Logo del Consultorio">
-        <nav>
-            <ul class="nav_elements">
-                <!--Inicio, servicios, iniciar sesión, contacto-->
-                <li><a href="#" style="font-weight:bold;">Pacientes</a></li>
-                <li><a href="#">Cerrar sesión</a></li>
-                <!--En la etiqueta p, va el nombre de la persona que inicio sesión-->
-                <li style="display:inline-flex"><i class="fas fa-user" style="margin-right: 10px; margin-top: 4px;"></i><p>Usuario</p></li>
-            </ul>
-        </nav> 
-    </header>
+    <form method="POST">
+        <header>
+            <img class="logo" src="../IMAGENES/logo7.png" alt="Logo del Consultorio">
+            <nav>
+                <ul class="nav_elements">
+                    <li><a href="#" style="font-weight:bold;">Pacientes</a></li>
+                    <input value="Cerrar sesión" type="submit" name="logout">
+                    <!--<li><a href="#" name="logout">Cerrar sesión</a></li>-->
+                    <li style="display:inline-flex"><i class="fas fa-user" style="margin-right: 10px; margin-top: 4px;"></i><p><?= $usuario ?></p></li>
+                </ul>
+            </nav> 
+        </header>
+    </form>
     <!------------------------ HEADER ------------------------->
 
+
+    <!------------------------ BUSQUEDA ------------------------->
     <div class="lp_cont">
         <br><br><br><br><br><br><br>
-        <form>
+        <form action="lista_pacientes.php" method="POST">
         <table class="buscador">
             <tr>
                 <td><p>Buscar por:</p></td>
                 <td>
-                    <select>
+                    <select name="op">
                         <option value="nombre">Nombre</option>
                         <option value="id">Id</option>
                     </select>
@@ -65,10 +64,15 @@ mysqli_close($conn);
                 <td>
                     <input type="text" class="busqueda" name="busqueda" placeholder="Ingrese el dato a buscar">
                 </td>
-                <td><button type="submit" class="buscar">Buscar</button></td>
+                <td>
+                    <input type="submit" value="Buscar">
+                </td>
+                <!--<td><button type="submit" class="buscar">Buscar</button></td>-->
                 <td><button type="submit" class="npaciente"><a href="../HTML/registrar_paciente.php">Nuevo paciente</a></button></td>
             </tr>
         </table>
+        </form>
+        <!------------------------ BUSQUEDA ------------------------->
 
         <br><br>
         <table class="datos">
@@ -81,16 +85,41 @@ mysqli_close($conn);
                 <th style="color: white;">Actualizar Menú</th>
             </tr>
 
-            <!--Aqui comenzaria el php (while) para repetir el tr hasta que se muestren todos los datos de la tabla-->
+<!-----------Código PHP----------------->
+            <?php
+                require 'Conexion.php';
+                $op = $_POST['op'];
+                $busqueda = $_POST['busqueda'];
+
+                if($busqueda == NULL){
+                    $sql = "SELECT Id, Nombre, Apellido_P, Apellido_M, Telefono FROM info_paciente";
+                    $datos = mysqli_query($conexion, $sql);
+                }
+
+                else if($op == "nombre"){
+                    $sql = "SELECT Id, Nombre, Apellido_P, Apellido_M, Telefono FROM info_paciente WHERE Nombre = '$busqueda'";
+                    $datos = mysqli_query($conexion, $sql);
+                }
+                else if($op == "id"){
+                    $sql = "SELECT Id, Nombre, Apellido_P, Apellido_M, Telefono FROM info_paciente WHERE Id = '$busqueda'";
+                    $datos = mysqli_query($conexion, $sql);
+                }
+
+                while($mostrar = mysqli_fetch_array($datos)){
+            ?>
+
             <tr>
-                <td><p>001</p></td>
-                <td><p>Eduardo</p></td>
-                <td><p>123456789</p></td>
+                <td><p> <?php echo $mostrar['Id'] ?> </p></td>
+                <td><p> <?php echo $mostrar['Nombre']; echo $mostrar['Apellido_P']; echo $mostrar['Apellido_M'] ?> </p></td>
+                <td><p> <?php echo $mostrar['Telefono'] ?> </p></td>
                 <td><a href="#">Expediente</a></td>
-                <td><a href="#">Nueva consulta</a></td>
+                <td><a href="consulta_paciente.php?prueba=<?=$mostrar['Id']?>">Nueva consulta</a></td>
                 <td><a href="#">Actualizar menú</a></td>
             </tr>
-        </form>
+
+            <?php
+            }
+            ?>
         </div>
     </div>
     

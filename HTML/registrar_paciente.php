@@ -1,6 +1,3 @@
-<?php
-    include("registro_p.php"); 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,145 +36,153 @@
     <!------------------------ HEADER ------------------------->
     <br><br><br><br><br><br>
     <div class="contenido2">
-        <div class="izquierda">
-        <form class="formconsu" action="registrar_paciente.php" method="POST">
-
-                <p class="encabezados">Nuevo Paciente</p>
-
-                    <table>
+        <form class="formconsu" action="registro_p.php" method="POST">
+            <div class="izquierda">
+                <h1 class="encabezados">Nuevo Paciente</h1>
+                <table>
                     <TR>
                         <TD>
                             <label for="name">Nombre:</label><br>
-                            <input type="text" id="name" name="user_name" placeholder="Nombre"></TD> 
+                            <input type="text" name="nombre" placeholder="Nombre">
+                        </TD> 
                         <TD>                    
                             <label for="Ap_Paterno">Apellido Paterno:</label><br>
-                            <input type="text" id="Ap_Paterno" name="user_Ap_Paterno" placeholder="Apellido Paterno"></TD> 
+                            <input type="text" name="ap_p" placeholder="Apellido Paterno">
+                        </TD> 
                         <TD>                    
                             <label for="Ap_Materno">Apellido Materno:</label><br>
-                            <input type="text" id="Ap_Materno" name="user_Ap_Materno" placeholder="Apellido Materno"></TD>
+                            <input type="text" name="ap_m" placeholder="Apellido Materno">
+                        </TD>
                     </TR>
-                    </table>
 
-                    <br>
+                </table>
+                <br>
 
-                    <table>
+                <table>
                     <TR>
                         <TD>
-                    <label for="Age">Edad:</label><br>
-                    <input type="value" id="Age" name="user_Age" placeholder="Edad">
+                            <label for="Age">Edad:</label><br>
+                            <input type="value" name="edad" placeholder="Edad">
                         <TD>                    
-                    <label for="Sexo">Sexo:</label><br>
-                    <select name="user_Sexo">
-                        <option value="1">Hombre</option>
-                        <option value="2">Mujer</option>
-                    </select>
+                        <td>
+                            <label for="Sexo">Sexo:</label><br>
+                            <select name="sexo">
+                                <option value="1">Hombre</option>
+                                <option value="2">Mujer</option>
+                            </select>
+                        </td>
                     </TR>
-                    </table>                    
+                </table>                    
 
                 <br>
                 <p>Fecha de Nacimiento</p>
-
-                    <table>
+                <table>
                     <TR>
                         <TD>
-                    <label for="day">Dia:</label><br>
-                    <input type="number" id="day" name="user_day" min="1" max="31" placeholder="Dia"></TD> 
+                            <label for="day">Dia:</label><br>
+                            <input type="number" name="nac_dia" min="1" max="31" placeholder="Dia">
+                        </TD> 
                         <TD>                    
-                    <label for="Month">Mes:</label><br>
-                        <select name="user_Mes">
-                        <option value="1">Enero</option>
-                        <option value="2">Febrero</option>
-                        <option value="3">Marzo</option>
-                        <option value="4">Abril</option>
-                        <option value="5">Mayo</option>
-                        <option value="6">Junio</option>
-                        <option value="7">Julio</option>
-                        <option value="8">Agosto</option>
-                        <option value="9">Septiembre</option>
-                        <option value="10">Octubre</option>
-                        <option value="11">Noviembre</option>
-                        <option value="12">Diciembre</option>
-                    </select></TD> 
+                            <label for="Month">Mes:</label><br>
+                            <select name="nac_mes">
+                                <option value="1">Enero</option>
+                                <option value="2">Febrero</option>
+                                <option value="3">Marzo</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Mayo</option>
+                                <option value="6">Junio</option>
+                                <option value="7">Julio</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                        </TD> 
                         <TD>                    
-                        <label for="Year">Año:</label><br>
-                    <input type="number" id="year" name="user_year" min="1921" max="2021" placeholder="Año"></TD>
+                            <label for="Year">Año:</label><br>
+                            <input type="number" name="nac_año" min="1921" max="2021" placeholder="Año">
+                        </TD>
                     </TR>
-                    </table>                    
+                </table>                    
 
-                    <br>
+                <br>
 
                 <p>Contacto</p>
-                    <table>
+                <table>
                     <TR>
                         <TD>
-                    <label for="Telefono">Telefono:</label><br>
-                    <input type="tel" id="Telefono" name="user_Telefono" placeholder="Numero de telefono"></TD> 
+                            <label for="Telefono">Telefono:</label><br>
+                            <input type="tel" name="tel" placeholder="Numero de telefono">
+                        </TD> 
                         <TD>                    
-                    <label for="mail">Correo electrónico:</label><br>
-                    <input type="email" id="email" name="user_mail" placeholder="Correo electronico"></TD> 
+                            <label for="mail">Correo electrónico:</label><br>
+                            <input type="email" name="correo" placeholder="Correo electronico">
+                        </TD> 
                     </TR>
-                    </table>
-
-        </form>
-        </div> 
+                </table>
+            </div> 
 
 
-        <div class="derecha">
-        <form class="formconsu2" action="registrar_paciente.php" method="POST" >
-
-                    <table class="tablas">
+            <div class="derecha">
+                <form class="formconsu2" action="registrar_paciente.php" method="POST" >
+                <table class="tablas">
                     <TR>
                         <TD>
                             <label for="enfermedades">Enfermedades:</label><br>
-                            <textarea cols="25" rows="4" id="enfermedades" name="user_enfermedades" placeholder="Describa las enfermedades"></textarea></TD> 
+                            <textarea cols="25" rows="4" id="enfermedades" name="enfermedades" placeholder="Describa las enfermedades"></textarea>
+                        </TD> 
                         <TD>                    
                             <label for="alergias">Alergias:</label><br>
-                            <textarea cols="25" rows="4" id="alergias" name="user_alergias" placeholder="Describa las alergias"></textarea></TD> 
+                            <textarea cols="25" rows="4" id="alergias" name="alergias" placeholder="Describa las alergias"></textarea>
+                        </TD> 
                     </TR>
-                    </table>
+                </table>
 
-                    <br>
+                <br>
 
-                    <table>
+                <table>
                     <TR>
                         <TD>
-                    <label for="Dalimenticios">Disgustos alimenticios:</label><br>
-                    <textarea cols="25" rows="4" id="Dalimenticios" name="user_Dalimenticios" placeholder="Describe los disgustos alimenticios"></textarea></TD> 
+                            <label for="Dalimenticios">Disgustos alimenticios:</label><br>
+                            <textarea cols="25" rows="4" id="Dalimenticios" name="disgustos" placeholder="Describe los disgustos alimenticios"></textarea>
+                        </TD> 
                     </TR>
                     </table>                    
 
                 <br>
 
-                    <table class="tablas">
+                <table class="tablas">
                     <TR>
                         <TD>
                             <p>Realizas actividad fisica:</p>
-                              <label for="html" class="radio">Si</label>
-                              <input type="radio" id="css" name="fav_language" value="CSS"><br>
-                                <label for="html" class="radio">No</label>
-                              <input type="radio" id="css" name="fav_language" value="CSS">
+                            <select name="act_fisica">                                    
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                            </select>
                         </TD>
-                        <td><br></td> 
+
                         <TD>   
-                        <p>Consume tabaco:</p>                 
-                              <label for="html" class="radio">Si</label>
-                              <input type="radio" id="css" name="fav_language" value="CSS"><br>
-                                <label for="html" class="radio">No</label>
-                              <input type="radio" id="css" name="fav_language" value="CSS">
+                            <p>Consume tabaco:</p>                 
+                            <select name="tabaco">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                            </select>
                         </TD>
+
                         <TD>        
-                        <p>Consume alcohol:</p>            
-                              <label for="html" class="radio">Si</label>
-                              <input type="radio" id="css" name="fav_language" value="CSS"><br>
-                                <label for="html" class="radio">No</label>
-                              <input type="radio" id="css" name="fav_language" value="CSS">
-                        </TD> 
+                            <p>Consume alcohol:</p>            
+                            <select name="al">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                            </select>
+                        </TD>                         
                     </TR>
-                    </table><br><br><br>
-                    <input type="submit">
-                   <!-- <button class="boton3"><a href="../HTML/consulta_paciente.php">Registrar paciente</a></button> -->
+                </table><br><br><br>
+                <input type="submit">
+<!-- <button class="boton3"><a href="../HTML/consulta_paciente.php">Registrar paciente</a></button> -->
         </form>
         </div> 
-        </div> 
+    </div> 
 </body>
 </html>

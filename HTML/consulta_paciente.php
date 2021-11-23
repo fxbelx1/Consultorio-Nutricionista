@@ -1,3 +1,7 @@
+<?php
+    $id=$_GET['prueba'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +42,15 @@
     <!--<div class="contenido">-->
 
         <!------------------------ DATOS DEL PACIENTE (IZQUIERDA) ------------------------->
+        <?php
+            require 'Conexion.php';
+            $sql = "SELECT * FROM info_paciente WHERE Id = '$id'";
+            $datos = mysqli_query($conexion, $sql);
+            $mostrar = mysqli_fetch_array($datos);
+
+        ?>
+
+
         <div class="datos_paciente">
             <br><br><br><br><br><br>
             <h1 >Nueva consulta</h1>
@@ -48,37 +61,34 @@
                 <p> Fecha de ejemplo</p>
 
                 <label for="paciente"> Paciente:</label>
-                <p>Priscila</p>
+                <p><?php echo $mostrar['Nombre'] ?></p>
 
                 <label for="edad"> Edad:</label>
-                <p>21</p>
+                <p><?php echo $mostrar['Edad'] ?></p>
 
                 <label> Sexo:</label>
-                <p>Femenino</p>
+                <p><?php echo $mostrar['Sexo'] ?></p>
 
                 <label for="nacimiento">Fecha de nacimiento:</label>
-                <p>10 de Julio 2000</p>
+                <p><?php echo $mostrar['Dia']; echo $mostrar['Mes']; echo $mostrar['Año']; ?></p>
 
                 <label for="endermedades">Enfermedades:</label>
-                <p>Asma</p>
+                <p><?php echo $mostrar['Enfermedades'] ?></p>
 
                 <label for="alergias">Alergias:</label>
-                <p>Ninguna</p>
+                <p><?php echo $mostrar['Alergias'] ?></p>
 
                 <label for="disgustos">Disgustos alimenticios:</label>
-                <p>Queso crema, ajo y leche</p>
+                <p><?php echo $mostrar['Disgustos'] ?></p>
 
                 <label>Actividad fisica:</label>
-                <input type="radio" name="actfi">Si
-                <input type="radio" name="actfi">No<br><br>
+                <p><?php echo $mostrar['Act_Fisica'] ?></p>
 
                 <label>Tabaco:</label>
-                <input type="radio" name="tabaco">Si
-                <input type="radio" name="tabaco">No<br><br>
+                <p><?php echo $mostrar['Tabaco'] ?></p>
 
                 <label>Alcohol:</label>
-                <input type="radio" name="alcohol">Si
-                <input type="radio" name="alcohol">No<br><br>
+                <p><?php echo $mostrar['Alcohol'] ?></p>
                 
             </form>
             <button class="boton1" type="submit">Modificar datos</button>
