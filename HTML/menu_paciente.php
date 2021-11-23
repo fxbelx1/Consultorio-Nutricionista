@@ -32,6 +32,14 @@ mysqli_close($conn);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+
+    <script>
+        function verduras() {
+            var eq = document.getElementById("eq").value;
+            document.getElementById("ver_kcal").innerHTML = eq*25;
+        }
+    </script>
+
 </head>
 <body>
     <!------------------------ HEADER ------------------------->
@@ -94,45 +102,57 @@ mysqli_close($conn);
             <div class="calculos1">
                     <table border="1" width="900">
                         <tr>
-                            <td>
-
-                            </td>
-                           
-                            <td>
-                                <label>Eq</label> 
-                            </td>
-                            <td>
+                            <th style="width: 15%;">
+                                <p>Alimento</p>
+                            </th>
+                            <th style="width: 50%;">
+                                <p>Cantidad</p>
+                            </th>
+                            <th style="width: 8.75%;">
                                 <label>Kcal</label> 
-                            </td>
-                            <td>
+                            </th>
+                            <th style="width: 8.75%;">
                                 <label>Pro</label> 
-                            </td>
-                            <td>
+                            </th>
+                            <th style="width: 8.75%;">
                                 <label>Lip</label> 
-                            </td>
-                            <td>
+                            </th>
+                            <th style="width: 8.75%;">
                                 <label>HCO</label> 
-                            </td>
+                            </th>
                         </tr>
                         <tr>
                             <td>
-                             <label>Verduras</label> 
-                         </td>
-                         <td>
+                            <label>Verduras</label>
+                            </td>
 
-                         </td>
-                         <td>
+                            <td>
+                                <select id="eq" onchange="verduras()">
+                                    <option value="" selected disabled>Cantidad de verduras</option>
+                                    <option value="0.5">0.5</option>
+                                    <option value="1">1</option>
+                                    <option value="1.5">1.5</option>
+                                    <option value="2">2</option>
+                                    <option value="2.5">2.5</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </td>
 
-                         </td>
-                         <td>
+                            <td>
+                                <p id="ver_kcal"> </p>
+                            </td>
+                            <td>
 
-                         </td>
-                         <td>
+                            </td>
+                            <td>
 
-                         </td>
-                         <td>
+                            </td>
+                            <td>
 
-                         </td>
+                            </td>
+                            <td>
+
+                            </td>
                          
                      </tr>
                      <tr>
