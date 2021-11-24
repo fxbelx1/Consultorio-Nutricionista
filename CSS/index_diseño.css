@@ -389,15 +389,27 @@ header{
     float: left;
 }
 
+.calculos1 button{
+    padding: 6px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
 .calculos2{
     height: 100%;
     width: 70%;
-    float: right;
 }
 
 .datos_paciente{
-   margin-top: 0px;
+    margin-top: 0px;
     width: 30%;
+    height: 1000px;
     /*border-radius: 1em;*/
     float: left;
     background-color: #C0BBB5;
@@ -434,6 +446,7 @@ header{
 
 .tablas{
     border-style: none;
+    width: auto;
 }
 
 .formconsu input{
@@ -467,6 +480,28 @@ header{
     font-family: 'Poppins', sans-serif;
     font-size: 17px;
 }
+
+.td_espacio{
+    width: 20%;
+}
+
+.cons_boton{
+    padding: 6px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+/*
+.por{
+    width: 500px;
+}
+*/
 
 
 
