@@ -1,15 +1,17 @@
 <?php
-$servername = "localhost";
-$database = "nutrisystem";
-$username = "root";
-$password = "";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-mysqli_close($conn);
+    $servername = "localhost";
+    $database = "nutrisystem";
+    $username = "root";
+    $password = "";
+
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $database);
+    
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +47,8 @@ mysqli_close($conn);
             </ul>
         </nav> 
     </header>
+    <!------------------------ HEADER ------------------------->
+
 
     <!------------------------ INICIO ------------------------->
     <div class="inicio">
@@ -56,9 +60,10 @@ mysqli_close($conn);
             <h1>Cuando comes bien te sientes bien</h1>
             <p>Tu que requieres de sentirte bien saludablemente, ven y encuentra esa forma con nosotros.</p>
             <a class="a_simple" href="#servicios">Conoce nuestros servicios </a> <!--a_simple-->
-        </div>
-            
+        </div>  
     </div>
+    <!------------------------ INICIO ------------------------->
+
 
     <!------------------------ SERVICIOS ------------------------->
     <div class="servicios">
@@ -95,6 +100,8 @@ mysqli_close($conn);
         <p>Para mas información puede comunicarse con nosotros</p>
         <a class="isesion" href="#contacto"><button>Contacto</button></a>
     </div>
+    <!------------------------ SERVICIOS ------------------------->
+
 
     <!------------------------ CONTACTO ------------------------->
     <div class="contacto">
@@ -133,6 +140,6 @@ mysqli_close($conn);
             </div>
         </div>     
     </div>
-   
+    <!------------------------ CONTACTO ------------------------->
 </body>
 </html>
