@@ -1,4 +1,6 @@
 <?php
+    require 'Conexion.php';
+
     session_start();
     $usuario = $_SESSION['ola'];
 
@@ -52,25 +54,25 @@
     <div class="lp_cont">
         <br><br><br><br><br><br><br>
         <form action="lista_pacientes.php" method="POST">
-        <table class="buscador">
-            <tr>
-                <td><p>Buscar por:</p></td>
-                <td>
-                    <select name="op">
-                        <option value="nombre">Nombre</option>
-                        <option value="id">Id</option>
-                    </select>
-                </td>
-                <td>
-                    <input type="text" class="busqueda" name="busqueda" placeholder="Ingrese el dato a buscar">
-                </td>
-                <td>
-                    <input type="submit" value="Buscar">
-                </td>
-                <!--<td><button type="submit" class="buscar">Buscar</button></td>-->
-                <td><button type="submit" class="npaciente"><a href="../HTML/registrar_paciente.php">Nuevo paciente</a></button></td>
-            </tr>
-        </table>
+            <table class="buscador">
+                <tr>
+                    <td><p>Buscar por:</p></td>
+                    <td>
+                        <select name="op">
+                            <option value="nombre">Nombre</option>
+                            <option value="id">Id</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="busqueda" name="busqueda" placeholder="Ingrese el dato a buscar">
+                    </td>
+                    <td>
+                        <input type="submit" name="buscar" value="Buscar">
+                    </td>
+                    <!--<td><button type="submit" class="buscar">Buscar</button></td>-->
+                    <td><button type="button" class="npaciente"><a href="../HTML/registrar_paciente.php">Nuevo paciente</a></button></td>
+                </tr>
+            </table>
         </form>
         <!------------------------ BUSQUEDA ------------------------->
 
@@ -87,21 +89,28 @@
 
 <!-----------Código PHP----------------->
             <?php
-                require 'Conexion.php';
-                $op = $_POST['op'];
-                $busqueda = $_POST['busqueda'];
+                if(isset($_POST['buscar'])){
+                    $op = $_POST['op'];
+                    $busqueda = $_POST['busqueda'];
 
-                if($busqueda == NULL){
+                    if($busqueda == NULL){
+                        $sql = "SELECT Id, Nombre, Apellido_P, Apellido_M, Telefono FROM info_paciente";
+                        $datos = mysqli_query($conexion, $sql);
+                    }
+                    else{
+                        if($op == "nombre"){
+                            $sql = "SELECT Id, Nombre, Apellido_P, Apellido_M, Telefono FROM info_paciente WHERE Nombre = '$busqueda'";
+                            $datos = mysqli_query($conexion, $sql);
+                        }
+                        else if($op == "id"){
+                            $sql = "SELECT Id, Nombre, Apellido_P, Apellido_M, Telefono FROM info_paciente WHERE Id = '$busqueda'";
+                            $datos = mysqli_query($conexion, $sql);
+                        }
+                    }
+                }
+                else{
+                    /* darle valor a la variable datos */
                     $sql = "SELECT Id, Nombre, Apellido_P, Apellido_M, Telefono FROM info_paciente";
-                    $datos = mysqli_query($conexion, $sql);
-                }
-
-                else if($op == "nombre"){
-                    $sql = "SELECT Id, Nombre, Apellido_P, Apellido_M, Telefono FROM info_paciente WHERE Nombre = '$busqueda'";
-                    $datos = mysqli_query($conexion, $sql);
-                }
-                else if($op == "id"){
-                    $sql = "SELECT Id, Nombre, Apellido_P, Apellido_M, Telefono FROM info_paciente WHERE Id = '$busqueda'";
                     $datos = mysqli_query($conexion, $sql);
                 }
 
@@ -118,7 +127,7 @@
             </tr>
 
             <?php
-            }
+                }
             ?>
         </div>
     </div>

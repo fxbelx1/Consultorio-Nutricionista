@@ -33,9 +33,10 @@
     <div class="principal">
         <br><br><br><br><br><br><br>
         <h1>Iniciar Sesión</h1>
+        <!--
         <p>Si ya es paciente puede ingresar el id y contraseña otorgada en su consulta para acceder a 
             su expediente y menú.
-        </p>
+        </p> -->
     </div>
 
     <!------------------------ FORM INICIO DE SESIÓN PACIENTE ------------------------->
@@ -52,11 +53,6 @@
                 <input type="submit">
 
                 <!--<button type="submit"><a href="#">Iniciar Sesión</a></button>-->
-
-                
-
-          
-
             </div>
         </form>
 
