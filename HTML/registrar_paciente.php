@@ -34,56 +34,53 @@
         </nav> 
     </header>
     <!------------------------ HEADER ------------------------->
-    <br><br><br><br><br><br>
-    <div class="contenido2">
-        <form class="formconsu" action="registro_p.php" method="POST">
-            <div class="izquierda">
-                <h1 class="encabezados">Nuevo Paciente</h1>
-                <table>
+
+
+    <!------------------------ FORM ------------------------->
+    <!--<h1 class="titulo-reg">Nuevo Paciente</h1>-->
+    <form class="form-reg" action="registro_p.php" method="POST">
+        <div class="reg-grid">
+            <div class="datos-reg">
+                
+                <h1>Datos personales</h1>
+                <table class="datos-pers">
                     <TR>
                         <TD>
-                            <label for="name">Nombre:</label><br>
-                            <input type="text" name="nombre" placeholder="Nombre">
+                            <label for="name">Nombre(s):</label>
+                            <input type="text" name="nombre">
                         </TD> 
                         <TD>                    
-                            <label for="Ap_Paterno">Apellido Paterno:</label><br>
-                            <input type="text" name="ap_p" placeholder="Apellido Paterno">
+                            <label for="Ap_Paterno">Apellido Paterno:</label>
+                            <input type="text" name="ap_p">
                         </TD> 
                         <TD>                    
-                            <label for="Ap_Materno">Apellido Materno:</label><br>
-                            <input type="text" name="ap_m" placeholder="Apellido Materno">
+                            <label for="Ap_Materno">Apellido Materno:</label>
+                            <input type="text" name="ap_m">
                         </TD>
                     </TR>
 
-                </table>
-                <br>
-
-                <table>
                     <TR>
                         <TD>
-                            <label for="Age">Edad:</label><br>
-                            <input type="value" name="edad" placeholder="Edad">
-                        <TD>                    
+                            <label for="Age">Edad:</label>
+                            <input type="value" name="edad">
+                        </TD>                    
                         <td>
-                            <label for="Sexo">Sexo:</label><br>
+                            <label for="Sexo" style="position: relative; top: -14px;" >Sexo:</label>
                             <select name="sexo">
                                 <option value="1">Hombre</option>
                                 <option value="2">Mujer</option>
                             </select>
                         </td>
-                    </TR>
-                </table>                    
+                    </TR>                  
 
-                <br>
-                <p>Fecha de Nacimiento</p>
-                <table>
+                    <!--<p>Fecha de Nacimiento</p>-->
                     <TR>
                         <TD>
-                            <label for="day">Dia:</label><br>
-                            <input type="number" name="nac_dia" min="1" max="31" placeholder="Dia">
+                            <label for="day">Dia de nacimiento:</label>
+                            <input type="number" name="nac_dia" min="1" max="31">
                         </TD> 
                         <TD>                    
-                            <label for="Month">Mes:</label><br>
+                            <label for="Month" style="position: relative; top: -14px;">Mes de nacimiento:</label>
                             <select name="nac_mes">
                                 <option value="1">Enero</option>
                                 <option value="2">Febrero</option>
@@ -100,89 +97,88 @@
                             </select>
                         </TD> 
                         <TD>                    
-                            <label for="Year">Año:</label><br>
-                            <input type="number" name="nac_año" min="1921" max="2021" placeholder="Año">
+                            <label for="Year">Año de nacimiento:</label>
+                            <input type="number" name="nac_año" min="1921" max="2021">
                         </TD>
-                    </TR>
-                </table>                    
+                    </TR>                   
 
-                <br>
-
-                <p>Contacto</p>
-                <table>
+                    <!--<p>Contacto</p>-->
                     <TR>
                         <TD>
-                            <label for="Telefono">Telefono:</label><br>
-                            <input type="tel" name="tel" placeholder="Numero de telefono">
+                            <label for="Telefono">Telefono:</label>
+                            <input type="tel" name="tel">
                         </TD> 
                         <TD>                    
-                            <label for="mail">Correo electrónico:</label><br>
-                            <input type="email" name="correo" placeholder="Correo electronico">
+                            <label for="mail">Correo electrónico:</label>
+                            <input type="email" name="correo">
                         </TD> 
                     </TR>
                 </table>
             </div> 
+            <!-- izquierda -->
 
-
-            <div class="derecha">
-                <form class="formconsu2" action="registrar_paciente.php" method="POST" >
-                <table class="tablas">
+            <!-- derecha -->
+            <div class="datos-reg">
+                <h1>No me acuerdo</h1>
+                <!--<form class="formconsu2" action="registrar_paciente.php" method="POST" >-->
+                <table class="datos-pers">
                     <TR>
                         <TD>
-                            <label for="enfermedades">Enfermedades:</label><br>
+                            <label for="enfermedades">Enfermedades:</label>
                             <textarea cols="25" rows="4" id="enfermedades" name="enfermedades" placeholder="Describa las enfermedades"></textarea>
                         </TD> 
                         <TD>                    
-                            <label for="alergias">Alergias:</label><br>
+                            <label for="alergias">Alergias:</label>
                             <textarea cols="25" rows="4" id="alergias" name="alergias" placeholder="Describa las alergias"></textarea>
                         </TD> 
                     </TR>
-                </table>
 
-                <br>
-
-                <table>
                     <TR>
                         <TD>
-                            <label for="Dalimenticios">Disgustos alimenticios:</label><br>
+                            <label for="Dalimenticios">Disgustos alimenticios:</label>
                             <textarea cols="25" rows="4" id="Dalimenticios" name="disgustos" placeholder="Describe los disgustos alimenticios"></textarea>
                         </TD> 
                     </TR>
-                    </table>                    
 
-                <br>
-
-                <table class="tablas">
+                    <table class="datos-pers" style="margin-top: 10px; margin-bottom: 15px">
                     <TR>
                         <TD>
-                            <p>Realizas actividad fisica:</p>
-                            <select name="act_fisica">                                    
+                            <label style="position: relative; top: -14px;">Realizas actividad fisica:</label>
+                            <select name="act_fisica" style="padding-inline: 60px">                                    
                                 <option value="1">Si</option>
                                 <option value="0">No</option>
                             </select>
                         </TD>
 
                         <TD>   
-                            <p>Consume tabaco:</p>                 
-                            <select name="tabaco">
+                            <label style="position: relative; top: -14px;">Consume tabaco:</label>                 
+                            <select name="tabaco" style="padding-inline: 60px">
                                 <option value="1">Si</option>
                                 <option value="0">No</option>
                             </select>
                         </TD>
 
                         <TD>        
-                            <p>Consume alcohol:</p>            
-                            <select name="al">
+                            <label style="position: relative; top: -14px;">Consume alcohol:</label>            
+                            <select name="al" style="padding-inline: 60px">
                                 <option value="1">Si</option>
                                 <option value="0">No</option>
                             </select>
                         </TD>                         
                     </TR>
-                </table><br><br><br>
-                <input type="submit">
-<!-- <button class="boton3"><a href="../HTML/consulta_paciente.php">Registrar paciente</a></button> -->
-        </form>
-        </div> 
-    </div> 
+                    </table>
+                </table>
+
+                <div>
+                    <input type="submit" class="boton">
+                </div>
+
+                <!--
+                <button class="boton3"><a href="../HTML/consulta_paciente.php">Registrar paciente</a></button> -->
+            </div>
+            <!-- derecha -->
+        <div>
+    </form> 
+    <!------------------------ FORM ------------------------->
 </body>
 </html>

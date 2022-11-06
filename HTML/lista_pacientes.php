@@ -58,7 +58,7 @@
                 <tr>
                     <td><p>Buscar por:</p></td>
                     <td>
-                        <select name="op">
+                        <select class="lp-select" name="op">
                             <option value="nombre">Nombre</option>
                             <option value="id">Id</option>
                         </select>
@@ -119,7 +119,7 @@
 
             <tr>
                 <td><p> <?php echo $mostrar['Id'] ?> </p></td>
-                <td><p> <?php echo $mostrar['Nombre']; echo $mostrar['Apellido_P']; echo $mostrar['Apellido_M'] ?> </p></td>
+                <td><p> <?php echo $mostrar['Nombre'] . ' '; echo $mostrar['Apellido_P'] . ' '; echo $mostrar['Apellido_M'] ?> </p></td>
                 <td><p> <?php echo $mostrar['Telefono'] ?> </p></td>
                 <td><a href="#">Expediente</a></td>
                 <td><a href="consulta_paciente.php?prueba=<?=$mostrar['Id']?>">Nueva consulta</a></td>

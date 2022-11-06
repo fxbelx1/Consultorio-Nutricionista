@@ -520,7 +520,7 @@ header{
     margin: auto; /*centrar*/
 }
 
-select{
+.lp-select{
     padding: 7px 12px;
     margin-left: 20px;
     border-radius: 5px;
@@ -617,15 +617,35 @@ select{
 
 
 /*////////////////////////////////////// REGISTRAR PACIENTE ////////////////////////////////////////////*/
-.contenido2{
-    
-    border-radius: 1em;
+.reg-grid{
+    display: grid;
+    grid-template-columns: 49% 49%;
+    position: relative;
+    gap: 23px;
+    /*margin-left: 22px;
+    margin-right: 22px;*/
+    margin: 22px;
 }
 
-.izquierda{
+.titulo-reg{
+    padding-top: 120px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+}
+
+.form-reg{
+    padding-top: 100px;
+}
+
+/*.izquierda{
     
     width: 50%;
-    border-radius: 1em;
+    height: 100%;
+    position: absolute;
+    top: 100px;
+    com   border-radius: 1em;   com
     float: left;
     background-color: #C0BBB5;
     font-family: 'Poppins', sans-serif;
@@ -637,21 +657,34 @@ select{
     border-radius: 1em;
     float: right;
     font-family: 'Poppins', sans-serif;
+}*/
+
+.datos-reg{
+    background-color: white;
+    height: auto;
 }
 
-.formconsu select{
+.datos-reg h1{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/*.form-reg select{
     font-family: 'Poppins', sans-serif;
     border: none;
     border-bottom: 1px solid black;
     background-color: #C0BBB5;   
 }
 
-.formconsu2 textarea{
+.form-reg textarea{
     font-family: 'Poppins', sans-serif;
     border: none;
     border-bottom: 1px solid black;
     background-color: #E4E4E4;      
-}
+}*/
 
 .boton3{
     padding: 6px 25px;
@@ -667,4 +700,60 @@ select{
     margin: -20px -50px; 
     position:relative; 
     left:40%;   
+}
+
+.datos-pers{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.datos-pers input{
+    padding-inline: 20px;
+    height: 40px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    border: solid black 1px;
+}
+
+.datos-pers tr{
+    margin-bottom: 30px;
+}
+
+.datos-pers label{
+    font-family: 'Poppins', sans-serif;
+}
+
+.datos-pers select{
+    padding-inline: 50px;
+    height: 40px;
+    position: relative;
+    top: -14px;
+}
+
+.datos-pers textarea{
+    padding-inline: 10px;
+    height: 75px;
+    width: 270px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    border: solid black 1px;
+}
+
+.datos-reg .boton{
+    padding: 10px 50px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+.datos-reg div{
+    margin: auto;
+    width: 220.25px;
+    margin-bottom: 15px;
 }
