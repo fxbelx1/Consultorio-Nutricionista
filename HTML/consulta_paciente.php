@@ -155,32 +155,38 @@
             <!------------------------ DATOS DEL PACIENTE (IZQUIERDA) ------------------------->
 
 
+
+
+
+
             <!------------------------ CALCULOS ANTROPOMETRICOS (DERECHA) ------------------------->
-            <div class="calculos" style="display: none;">
-                <br><br><br>
+            <div class="calculos">
                 <!------------------------ ESTATURA Y PESO ------------------------->
-                <form action="pruebas.php" method="POST" >
-                    <table class="tablas" style="margin-left: 20px;">
-                        <tbody>
-                            <br><br>
-                        <tr>
-                            <td rowspan="2"> Ingrese el nuevo peso y estatura del paciente: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td><label for="peso">Peso:</label></td>
-                            <td><label for="estatura">Estatura:</label></td>
-                        </tr>
-                        <tr>
-                            <td><input type="number" name="peso" min="0" id="peso" style="width: 100px;">Kg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td><input type="number" name="estatura" id="es" style="width: 100px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td style="width: 14.28%;"><a href="#" onclick="calculos()"><button class="cons_boton">Calcular</button></a></td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <form action="pruebas.php" method="POST">
+                    <h1>Nueva consulta</h1>
+                    <p>Ingrese el nuevo peso y estatura del paciente:</p>
+                    <div class="estatura_peso">
+                        <div>
+                            <label>Peso:</label>
+                            <input type="number" name="peso" min="0" id="peso">
+                        </div>
+                        <div>
+                            <label>Estatura:</label>
+                            <input type="number" name="estatura" id="es">
+                        </div>
+                        <div>
+                            <a href="#" onclick="calculos()"><button class="cons_boton">Calcular</button></a>
+                        </div>
+                    </div>
+
+                    <div style="width: 100%; height: 20px; background-color:#E4E4E4"></div>
+                    
                     <!------------------------ ESTATURA Y PESO ------------------------->
-                    <br><br>
-                    <hr>
-                    <br><br>
+
+
                     <!------------------------ CALCULOS ------------------------->
                     <div>
+                        
                         <div class="calculos1" style="margin-left: 20px; width: 900px">
                             <table class="tablas">
                                 <tr>
@@ -197,7 +203,7 @@
                         </div>
                         <!------------------------ CALCULOS ------------------------->
                         <br><br>
-                        <div class="calculos2">
+                        <div class="calculos2" style="display: none">
                             <br><br>
                             <p>Kilocalorias necesarias para la dieta</p>
                             <!------------------------ KCAL ------------------------->
