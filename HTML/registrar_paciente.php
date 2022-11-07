@@ -119,7 +119,7 @@
 
             <!-- derecha -->
             <div class="datos-reg">
-                <h1>No me acuerdo</h1>
+                <h1>Datos dieteticos</h1>
                 <!--<form class="formconsu2" action="registrar_paciente.php" method="POST" >-->
                 <table class="datos-pers">
                     <TR>

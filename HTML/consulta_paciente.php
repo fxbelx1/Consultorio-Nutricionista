@@ -82,180 +82,193 @@
 
         ?>
 
+        <div class="cont-cons">
+            <div class="datos_paciente">
+                <i class="fas fa-solid fa-person" style="font-size: 70px; margin-inline: 47%; margin-top: 20px; margin-bottom: 15px;"></i>
 
-        <div class="datos_paciente">
-            <br><br><br><br><br><br>
-            <h1 >Nueva consulta</h1>
-
-            <form class="formconsu">
-                <table></table>
-                <label for="fecha_consulta">Fecha de la consulta:</label><br>
-                <p> Fecha de ejemplo</p>
-
-                <label for="paciente"> Paciente:</label>
-                <p><?php echo $mostrar['Nombre'] ?></p>
-
-                <label for="edad"> Edad:</label>
-                <p>
-                    <?php 
-                        echo $mostrar['Edad']; 
-                        $edad1 = $mostrar['Edad'];
+                <h1><?php echo $mostrar['Nombre'] . " " . $mostrar['Apellido_P'] . " " . $mostrar['Apellido_M'] ?></h1>
+                <p style="text-align: center;"> <?php 
+                    if($mostrar['Sexo'] == 1){
+                        echo "Hombre ";
+                    }
+                    else if($mostrar['Sexo'] == 2){
+                        echo "Mujer, ";
+                    } 
+                    
+                    echo $mostrar['Edad'] . " años";
                     ?>
-                    <script>
-                        var edad = '<?=$edad1?>';
-                    </script>
-                </p>
+                </p> <hr>
 
-                <label> Sexo:</label>
-                <p>
-                    <?php 
-                        echo $mostrar['Sexo'];
-                        $sexo1 = $mostrar['Sexo'];
-                    ?>
-                    <script>
-                        var sexo = '<?=$sexo1?>';
-                    </script>
-                </p>
+                <h3>Enfermedades</h3>
+                <p><?php echo $mostrar['Enfermedades']; ?></p>
+                <!--<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.</p>-->
 
-                <label for="nacimiento">Fecha de nacimiento:</label>
-                <p><?php echo $mostrar['Dia']; echo $mostrar['Mes']; echo $mostrar['Año']; ?></p>
+                <h3>Alergias</h3>
+                <p><?php echo $mostrar['Alergias']; ?></p>
+                <!--<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.</p>-->
 
-                <label for="endermedades">Enfermedades:</label>
-                <p><?php echo $mostrar['Enfermedades'] ?></p>
-
-                <label for="alergias">Alergias:</label>
-                <p><?php echo $mostrar['Alergias'] ?></p>
-
-                <label for="disgustos">Disgustos alimenticios:</label>
-                <p><?php echo $mostrar['Disgustos'] ?></p>
-
-                <label>Actividad fisica:</label>
-                <p><?php echo $mostrar['Act_Fisica'] ?></p>
-
-                <label>Tabaco:</label>
-                <p><?php echo $mostrar['Tabaco'] ?></p>
-
-                <label>Alcohol:</label>
-                <p><?php echo $mostrar['Alcohol'] ?></p>
-                
-            </form>
-            <button class="boton1" type="submit">Modificar datos</button>
-        </div>
-        <!------------------------ DATOS DEL PACIENTE (IZQUIERDA) ------------------------->
-
-        <!------------------------ CALCULOS ANTROPOMETRICOS (DERECHA) ------------------------->
-        <div class="calculos">
-            <br><br><br>
-            <!------------------------ ESTATURA Y PESO ------------------------->
-            <form action="pruebas.php" method="POST" >
-                <table class="tablas" style="margin-left: 20px;">
-                    <tbody>
-                        <br><br>
-                    <tr>
-                        <td rowspan="2"> Ingrese el nuevo peso y estatura del paciente: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td><label for="peso">Peso:</label></td>
-                        <td><label for="estatura">Estatura:</label></td>
-                    </tr>
-                    <tr>
-                        <td><input type="number" name="peso" min="0" id="peso" style="width: 100px;">Kg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td><input type="number" name="estatura" id="es" style="width: 100px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td style="width: 14.28%;"><a href="#" onclick="calculos()"><button class="cons_boton">Calcular</button></a></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <!------------------------ ESTATURA Y PESO ------------------------->
-                <br><br>
+                <h3>Disgustos alimenticios</h3>
+                <p><?php echo $mostrar['Disgustos']; ?></p>
+                <!--<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.</p>-->
                 <hr>
-                <br><br>
-                <!------------------------ CALCULOS ------------------------->
+                
                 <div>
-                    <div class="calculos1" style="margin-left: 20px; width: 900px">
-                        <table class="tablas">
-                            <tr>
-                                <td style="width: 3%;"><p style="width: 14.28%; font-weight: bold;">IMC</p></td>
-                                <td style="width: 9%;"><p id="imc" style="background-color: white;">0</p></td>
-                                <td style="width: 2%"></td>
-                                <td style="width: 6%; font-weight: bold;">% grasa</td>
-                                <td style="width: 9%;"><p id="grasa" style="background-color: white;">0</p></td>
-                                <td style="width: 2%;"></td>
-                                <td style="width: 10%; font-weight: bold;">Masa muscular</td>
-                                <td style="width: 9%;"><p id="masa" style="background-color: white;">0</p></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <!------------------------ CALCULOS ------------------------->
-                    <br><br>
-                    <div class="calculos2">
-                        <br><br>
-                        <p>Kilocalorias necesarias para la dieta</p>
-                        <!------------------------ KCAL ------------------------->
-                        <table class="tablas">
-                            <tr>
-                                <td style="width: 50px;"><p style="font-weight: bold;">Kcal</p></td>
-                                <td><p id="kcal" style="background-color: white; width: 200px;">0</p></td>
-                                <td><td style="width: 200px;"><a href="#" onclick="macro()"><button style="margin-left: 20px;" class="cons_boton">Calcular</button></a></td></td>
-                            </tr>
-                        <table>
-                            <!------------------------ KCAL ------------------------->
-                        </br>
-
-                        <script>
-                            function macro(){
-                                var hco = (document.getElementById("p_hco").value)/100;
-                                var lip = (document.getElementById("p_lip").value)/100;
-                                var pro = (document.getElementById("p_pro").value)/100;
-                                
-                                if((hco + lip + pro)<=1){
-                                    document.getElementById("hco_p").innerHTML = (hco*kcal).toFixed(2);
-                                    document.getElementById("lip_p").innerHTML = (lip*kcal).toFixed(2);
-                                    document.getElementById("pro_p").innerHTML = (pro*kcal).toFixed(2);
-
-                                    document.getElementById("hco_g").innerHTML = ((hco*kcal)/4).toFixed(2);
-                                    document.getElementById("lip_g").innerHTML = ((lip*kcal)/9).toFixed(2);
-                                    document.getElementById("pro_g").innerHTML = ((pro*kcal)/4).toFixed(2);
-                                }
+                    <h4>¿Realiza actividad fisica?</h4>
+                    <p>
+                        <?php 
+                            if($mostrar['Act_Fisica'] == 1){
+                                echo "Si";
                             }
-                        </script>
+                            else if($mostrar['Act_Fisica'] == 0){
+                                echo "No";
+                            }
+                        ?>
+                    </p>
 
-                        <!------------------------ PORCENTAJES ------------------------->
-                        <table class="tablas">    
-                            <tr>
-                                <td class="por"></td>
-                                <td>Porcentaje&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                <td style="width: 120px;">Kcal</td>
-                                <td>Gramos</td>
-                            </tr>
-                            <tr>
-                                <td class="por">HCO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                <td><input id="p_hco" type="number" style="width: 70px;"></td>
-                                <td><p id="hco_p" style="background-color: white; width: 100px;">0</p></td>
-                                <td><p id="hco_g" style="background-color: white; width: 100px;">0</p></td>
-                            </tr>
-                            <tr>
-                                <td><br></td>
-                            </tr>
-                            <tr>
-                                <td class="por">Lip</td>
-                                <td><input id="p_lip" type="number" style="width: 70px;"></td>
-                                <td><p id="lip_p" style="background-color: white; width: 100px;">0</p></td>
-                                <td><p id="lip_g" style="background-color: white; width: 100px;">0</p></td>
-                            </tr>   
-                            <tr>
-                                <td><br></td>
-                            </tr>  
-                            <tr>
-                                <td class="por">Pro</td>
-                                <td><input id="p_pro" type="number" style="width: 70px;"></td>
-                                <td><p id="pro_p" style="background-color: white; width: 100px;">0</p></td>
-                                <td><p id="pro_g" style="background-color: white; width: 100px;">0</p></td>
-                            </tr>  
-                        </table>
-                        <!------------------------ PORCENTAJES ------------------------->
-                    </div>
+                    <h4>¿Fuma?</h4>
+                    <p>
+                        <?php 
+                            if($mostrar['Tabaco'] == 1){
+                                echo "Si";
+                            }
+                            else if($mostrar['Tabaco'] == 0){
+                                echo "No";
+                            }
+                        ?>
+                    </p>
+
+                    <h4>¿Consume bebidas alcoholicas?</h4>
+                    <p>
+                        <?php 
+                            if($mostrar['Alcohol'] == 1){
+                                echo "Si";
+                            }
+                            else if($mostrar['Alcohol'] == 0){
+                                echo "No";
+                            }
+                        ?>
+                    </p>
                 </div>
+
+                <button class="boton1" type="submit">Modificar datos</button>
+            </div>
+            <!------------------------ DATOS DEL PACIENTE (IZQUIERDA) ------------------------->
+
+
+            <!------------------------ CALCULOS ANTROPOMETRICOS (DERECHA) ------------------------->
+            <div class="calculos" style="display: none;">
                 <br><br><br>
-                <input type="submit" onclick="prueba()">
-            </form>
+                <!------------------------ ESTATURA Y PESO ------------------------->
+                <form action="pruebas.php" method="POST" >
+                    <table class="tablas" style="margin-left: 20px;">
+                        <tbody>
+                            <br><br>
+                        <tr>
+                            <td rowspan="2"> Ingrese el nuevo peso y estatura del paciente: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><label for="peso">Peso:</label></td>
+                            <td><label for="estatura">Estatura:</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="number" name="peso" min="0" id="peso" style="width: 100px;">Kg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><input type="number" name="estatura" id="es" style="width: 100px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td style="width: 14.28%;"><a href="#" onclick="calculos()"><button class="cons_boton">Calcular</button></a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!------------------------ ESTATURA Y PESO ------------------------->
+                    <br><br>
+                    <hr>
+                    <br><br>
+                    <!------------------------ CALCULOS ------------------------->
+                    <div>
+                        <div class="calculos1" style="margin-left: 20px; width: 900px">
+                            <table class="tablas">
+                                <tr>
+                                    <td style="width: 3%;"><p style="width: 14.28%; font-weight: bold;">IMC</p></td>
+                                    <td style="width: 9%;"><p id="imc" style="background-color: white;">0</p></td>
+                                    <td style="width: 2%"></td>
+                                    <td style="width: 6%; font-weight: bold;">% grasa</td>
+                                    <td style="width: 9%;"><p id="grasa" style="background-color: white;">0</p></td>
+                                    <td style="width: 2%;"></td>
+                                    <td style="width: 10%; font-weight: bold;">Masa muscular</td>
+                                    <td style="width: 9%;"><p id="masa" style="background-color: white;">0</p></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!------------------------ CALCULOS ------------------------->
+                        <br><br>
+                        <div class="calculos2">
+                            <br><br>
+                            <p>Kilocalorias necesarias para la dieta</p>
+                            <!------------------------ KCAL ------------------------->
+                            <table class="tablas">
+                                <tr>
+                                    <td style="width: 50px;"><p style="font-weight: bold;">Kcal</p></td>
+                                    <td><p id="kcal" style="background-color: white; width: 200px;">0</p></td>
+                                    <td><td style="width: 200px;"><a href="#" onclick="macro()"><button style="margin-left: 20px;" class="cons_boton">Calcular</button></a></td></td>
+                                </tr>
+                            <table>
+                                <!------------------------ KCAL ------------------------->
+                            </br>
+
+                            <script>
+                                function macro(){
+                                    var hco = (document.getElementById("p_hco").value)/100;
+                                    var lip = (document.getElementById("p_lip").value)/100;
+                                    var pro = (document.getElementById("p_pro").value)/100;
+                                    
+                                    if((hco + lip + pro)<=1){
+                                        document.getElementById("hco_p").innerHTML = (hco*kcal).toFixed(2);
+                                        document.getElementById("lip_p").innerHTML = (lip*kcal).toFixed(2);
+                                        document.getElementById("pro_p").innerHTML = (pro*kcal).toFixed(2);
+
+                                        document.getElementById("hco_g").innerHTML = ((hco*kcal)/4).toFixed(2);
+                                        document.getElementById("lip_g").innerHTML = ((lip*kcal)/9).toFixed(2);
+                                        document.getElementById("pro_g").innerHTML = ((pro*kcal)/4).toFixed(2);
+                                    }
+                                }
+                            </script>
+
+                            <!------------------------ PORCENTAJES ------------------------->
+                            <table class="tablas">    
+                                <tr>
+                                    <td class="por"></td>
+                                    <td>Porcentaje&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td style="width: 120px;">Kcal</td>
+                                    <td>Gramos</td>
+                                </tr>
+                                <tr>
+                                    <td class="por">HCO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td><input id="p_hco" type="number" style="width: 70px;"></td>
+                                    <td><p id="hco_p" style="background-color: white; width: 100px;">0</p></td>
+                                    <td><p id="hco_g" style="background-color: white; width: 100px;">0</p></td>
+                                </tr>
+                                <tr>
+                                    <td><br></td>
+                                </tr>
+                                <tr>
+                                    <td class="por">Lip</td>
+                                    <td><input id="p_lip" type="number" style="width: 70px;"></td>
+                                    <td><p id="lip_p" style="background-color: white; width: 100px;">0</p></td>
+                                    <td><p id="lip_g" style="background-color: white; width: 100px;">0</p></td>
+                                </tr>   
+                                <tr>
+                                    <td><br></td>
+                                </tr>  
+                                <tr>
+                                    <td class="por">Pro</td>
+                                    <td><input id="p_pro" type="number" style="width: 70px;"></td>
+                                    <td><p id="pro_p" style="background-color: white; width: 100px;">0</p></td>
+                                    <td><p id="pro_g" style="background-color: white; width: 100px;">0</p></td>
+                                </tr>  
+                            </table>
+                            <!------------------------ PORCENTAJES ------------------------->
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <input type="submit" onclick="prueba()">
+                </form>
+            </div>
         </div>
         <!------------------------ CALCULOS ANTROPOMETRICOS (DERECHA) ------------------------->
     <!--</div>-->

@@ -371,16 +371,26 @@ header{
 
 
 /*//////////////////////////////////////// CONSULTA PACIENTE /////////////////////////////////////////////*/
-.contenido{
+/*.contenido{
     border-radius: 1em;
+}*/
+
+.cont-cons{
+    display: grid;
+    grid-template-columns: 500px 800px;
+    gap: 20px;
+    position: absolute;
+    top: 120px;
+    margin-inline: 20px;
 }
 
 .calculos{
     height: 100%;
-    width: 70%;
-    border-radius: 1em;
+    /*width: 70%;*/
+    /*border-radius: 1em;*/
     float: right;
     font-family: 'Poppins', sans-serif;
+    background-color: white;
 }
 
 .calculos1{
@@ -408,15 +418,16 @@ header{
 
 .datos_paciente{
     margin-top: 0px;
-    width: 30%;
+    /*width: 30%;*/
     height: 1000px;
     /*border-radius: 1em;*/
     float: left;
-    background-color: #C0BBB5;
+    background-color: white;
+    padding: 20px;
 }
 
 .boton1{
-    padding: 6px 25px;
+    padding: 10px 50px;
     width: 280px;
     background-color: black;
     color: white;
@@ -426,6 +437,8 @@ header{
     transition: all 0.3s ease 0s;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
+    margin-inline: 20%;
+    margin-top: 25px;
 }
 
 .boton2{
@@ -476,6 +489,32 @@ header{
     color: black;
 }
 
+.datos_paciente p{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.datos_paciente h3{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+}
+
+.datos_paciente div{
+    margin-top: 50px;
+}
+
+.datos_paciente div p{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.datos_paciente div h4{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
 .textoejem{
     font-family: 'Poppins', sans-serif;
     font-size: 17px;
@@ -495,6 +534,11 @@ header{
     transition: all 0.3s ease 0s;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
+}
+
+hr{
+    border: solid black 1px;
+    margin: 20px;
 }
 
 /*
