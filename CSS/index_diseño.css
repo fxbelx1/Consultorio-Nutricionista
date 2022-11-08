@@ -548,6 +548,10 @@ header{
     width: auto;
 }
 
+.tablas td{
+    color: white;
+}
+
 .formconsu input{
     font-family: 'Poppins', sans-serif;
     border: none;

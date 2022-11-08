@@ -35,15 +35,25 @@
             var imc = peso/estatura;
             document.getElementById("imc").innerHTML = imc.toFixed(2);
 
+            var texto = document.getElementById("sexo").innerHTML;
+            var s = texto.split(" ");
+            sexo = s[1];
+            edad = s[2];
+
+            /*console.log(s[1] + ", " + s[2]);*/
+
             /**********GRASA**********/
-            if(sexo == 1){
+            if(sexo == "Hombre"){
                 var grasa = (1.2*imc) + (0.23*edad) - 10.8 - 5.4;
-                globalThis.kcal = (10*peso) + (6.25*(estatura*100)) - (5*edad) + 5; 
+                globalThis.kcal = (10*peso) + (6.25*(estatura*100)) - (5*edad) + 5;
             }
             else{
-                var grasa = (1.2*imc) + (0.23*edad) - 5.4;
-                globalThis.kcal = (10*peso) + (6.25*(estatura*100)) - (5*edad) - 161;
+                if(sexo == "Mujer"){
+                    var grasa = (1.2*imc) + (0.23*edad) - 5.4;
+                    globalThis.kcal = (10*peso) + (6.25*(estatura*100)) - (5*edad) - 161;
+                }
             }
+
             document.getElementById("grasa").innerHTML = grasa.toFixed(2) + " %";
 
             /**********MASA**********/
@@ -89,7 +99,7 @@
                 <i class="fas fa-solid fa-person" style="font-size: 70px; margin-inline: 47%; margin-top: 20px; margin-bottom: 15px;"></i>
 
                 <h1><?php echo $mostrar['Nombre'] . " " . $mostrar['Apellido_P'] . " " . $mostrar['Apellido_M'] ?></h1>
-                <p style="text-align: center;"> <?php 
+                <p id="sexo" style="text-align: center;"> <?php 
                     if($mostrar['Sexo'] == 1){
                         echo "Hombre ";
                     }
@@ -170,11 +180,11 @@
                     <div class="estatura_peso">
                         <div>
                             <label>Peso:</label>
-                            <input type="number" name="peso" min="0" id="peso">
+                            <input type="number" name="peso" min="0" id="peso" placeholder="Kilogramos">
                         </div>
                         <div>
                             <label>Estatura:</label>
-                            <input type="number" name="estatura" id="es">
+                            <input type="number" name="estatura" id="es" placeholder="Metros">
                         </div>
                         <div>
                             <a href="#" onclick="calculos()"><button class="cons_boton">Calcular</button></a>
@@ -190,54 +200,28 @@
                     <div class="calculos1">
                         <div>
                             <h1>IMC</h1>
-                            <p>0</p>
+                            <p id="imc">0</p>
                         </div>
 
                         <div>
                             <h1>M MUSCULAR</h1>
-                            <p>0</p>
+                            <p id="masa">0</p>
                         </div>
 
                         <div>
                             <h1>% GRASA</h1>
-                            <p>0</p>
+                            <p id="grasa">0</p>
                         </div>
 
                         <div class="kcal">
                             <hr>
                             <h1>KCAL necesarias para la dieta:</h1>
-                            <p>0</p>
+                            <p id="kcal">0</p>
                         </div>
-                        <!--
-                        <table class="tablas">
-                            <tr>
-                                <td style="width: 3%;"><p style="width: 14.28%; font-weight: bold;">IMC</p></td>
-                                <td style="width: 9%;"><p id="imc" style="background-color: white;">0</p></td>
-                                <td style="width: 2%"></td>
-                                <td style="width: 6%; font-weight: bold;">% grasa</td>
-                                <td style="width: 9%;"><p id="grasa" style="background-color: white;">0</p></td>
-                                <td style="width: 2%;"></td>
-                                <td style="width: 10%; font-weight: bold;">Masa muscular</td>
-                                <td style="width: 9%;"><p id="masa" style="background-color: white;">0</p></td>
-                            </tr>
-                        </table> -->
                     </div>
                     <!------------------------ CALCULOS ------------------------->
                     <br><br>
-                    <div class="calculos2" style="display: none">
-                        <br><br>
-                        <p>Kilocalorias necesarias para la dieta</p>
-                        <!------------------------ KCAL ------------------------->
-                        <table class="tablas">
-                            <tr>
-                                <td style="width: 50px;"><p style="font-weight: bold;">Kcal</p></td>
-                                <td><p id="kcal" style="background-color: white; width: 200px;">0</p></td>
-                                <td><td style="width: 200px;"><a href="#" onclick="macro()"><button style="margin-left: 20px;" class="cons_boton">Calcular</button></a></td></td>
-                            </tr>
-                        <table>
-                            <!------------------------ KCAL ------------------------->
-                        </br>
-
+                    <div class="calculos2">
                         <script>
                             function macro(){
                                 var hco = (document.getElementById("p_hco").value)/100;
@@ -267,8 +251,8 @@
                             <tr>
                                 <td class="por">HCO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                 <td><input id="p_hco" type="number" style="width: 70px;"></td>
-                                <td><p id="hco_p" style="background-color: white; width: 100px;">0</p></td>
-                                <td><p id="hco_g" style="background-color: white; width: 100px;">0</p></td>
+                                <td><p id="hco_p" style="width: 100px;">0</p></td>
+                                <td><p id="hco_g" style="width: 100px;">0</p></td>
                             </tr>
                             <tr>
                                 <td><br></td>
@@ -276,8 +260,8 @@
                             <tr>
                                 <td class="por">Lip</td>
                                 <td><input id="p_lip" type="number" style="width: 70px;"></td>
-                                <td><p id="lip_p" style="background-color: white; width: 100px;">0</p></td>
-                                <td><p id="lip_g" style="background-color: white; width: 100px;">0</p></td>
+                                <td><p id="lip_p" style="width: 100px;">0</p></td>
+                                <td><p id="lip_g" style="width: 100px;">0</p></td>
                             </tr>   
                             <tr>
                                 <td><br></td>
@@ -285,8 +269,8 @@
                             <tr>
                                 <td class="por">Pro</td>
                                 <td><input id="p_pro" type="number" style="width: 70px;"></td>
-                                <td><p id="pro_p" style="background-color: white; width: 100px;">0</p></td>
-                                <td><p id="pro_g" style="background-color: white; width: 100px;">0</p></td>
+                                <td><p id="pro_p" style="width: 100px;">0</p></td>
+                                <td><p id="pro_g" style="width: 100px;">0</p></td>
                             </tr>  
                         </table>
                         <!------------------------ PORCENTAJES ------------------------->
