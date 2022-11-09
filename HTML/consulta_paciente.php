@@ -23,8 +23,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
 
+    <!------------------------ JQUERY ------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <!------------------------ SCRIPT ------------------------->
-    <script>
+    <!--<script>
         function calculos(){
 
             /* Aqui agregar el cambio de display none al div de abajo */
@@ -63,6 +66,51 @@
             /**********KCAL**********/
             document.getElementById("kcal").innerHTML = kcal.toFixed(2) + " Kcal";
         }
+    </script> -->
+
+    <script>
+        $( document ).ready(function(){
+            var grasa, kcal;
+
+            var sexo_edad = $("#sexo").text();
+            var se_split = sexo_edad.split(" ");
+
+            $("#peso, #es").on("input", function(){
+
+                if(($("#peso").val() == 0) || ($("#es").val() == 0)){
+                    $("#imc").text("0");
+                    $("#grasa").text("0");
+                    $("#kcal").text("0");
+                    $("#masa").text("0");
+                }
+                else{
+                    /* IMC */
+                    var imc = ($("#peso").val())/($("#es").val());
+                    $("#imc").text(imc.toFixed(2));
+
+                    /* %GRASA */
+                    if(se_split[1] == "Hombre"){
+                        grasa = (1.2*imc) + (0.23*(se_split[2])) - 10.8 - 5.4;
+                        kcal = (10*($("#peso").val())) + (6.25*(($("#es").val())*100)) - (5*(se_split[2])) + 5;
+                    }
+                    else{
+                        if(se_split[1] == "Mujer"){
+                            grasa = (1.2*imc) + (0.23*(se_split[2])) - 5.4;
+                            kcal = (10*($("#peso").val())) + (6.25*(($("#es").val())*100)) - (5*(se_split[2])) - 161;
+                        }
+                    }
+
+                    $("#grasa").text(grasa);
+
+                    /* KCAL */
+                    $("#kcal").text(kcal);
+
+                    /* MASA */
+                    var masa = ($("#peso").val()) - (grasa/100)*($("#peso").val());
+                    $("#masa").text(masa);
+                }
+            });
+        });
     </script>
 <!------------------------ SCRIPT ------------------------->
 
