@@ -27,11 +27,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <!------------------------ SCRIPT ------------------------->
+
     <!--<script>
         function calculos(){
 
             /* Aqui agregar el cambio de display none al div de abajo */
             /**********IMC**********/
+            /* */
             var peso = document.getElementById("peso").value;
             var estatura = document.getElementById("es").value;
 
@@ -69,6 +71,7 @@
     </script> -->
 
     <script>
+
         $( document ).ready(function(){
             var grasa, kcal;
 
@@ -234,9 +237,6 @@
                             <label>Estatura:</label>
                             <input type="number" name="estatura" id="es" placeholder="Metros">
                         </div>
-                        <div>
-                            <a href="#" onclick="calculos()"><button class="cons_boton">Calcular</button></a>
-                        </div>
                     </div>
                 </div>
                     
@@ -265,6 +265,7 @@
                             <hr>
                             <h1>KCAL necesarias para la dieta:</h1>
                             <p id="kcal">0</p>
+                            <a href="#">realizar distribución</a>
                         </div>
                     </div>
                     <!------------------------ CALCULOS ------------------------->
@@ -298,7 +299,7 @@
                             </tr>
                             <tr>
                                 <td class="por">HCO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                <td><input id="p_hco" type="number" style="width: 70px;"></td>
+                                <td><input id="p_hco" type="number"></td>
                                 <td><p id="hco_p" style="width: 100px;">0</p></td>
                                 <td><p id="hco_g" style="width: 100px;">0</p></td>
                             </tr>
@@ -307,7 +308,7 @@
                             </tr>
                             <tr>
                                 <td class="por">Lip</td>
-                                <td><input id="p_lip" type="number" style="width: 70px;"></td>
+                                <td><input id="p_lip" type="number"></td>
                                 <td><p id="lip_p" style="width: 100px;">0</p></td>
                                 <td><p id="lip_g" style="width: 100px;">0</p></td>
                             </tr>   
@@ -316,7 +317,7 @@
                             </tr>  
                             <tr>
                                 <td class="por">Pro</td>
-                                <td><input id="p_pro" type="number" style="width: 70px;"></td>
+                                <td><input id="p_pro" type="number"></td>
                                 <td><p id="pro_p" style="width: 100px;">0</p></td>
                                 <td><p id="pro_g" style="width: 100px;">0</p></td>
                             </tr>  
