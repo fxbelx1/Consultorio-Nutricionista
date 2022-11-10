@@ -462,12 +462,25 @@ header{
 }
 
 .calculos1 .kcal{
-    text-align: center;
+    text-align: right;
     color: white;
     grid-row-start: 2;
     grid-column-start: 1;
     grid-column-end: 4;
     height: 150px;
+    
+}
+
+.calculos .kcal a{
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    display: block;
+    margin-top: 25px;
+}
+
+.calculos .kcal a:hover{
+    color: #bbb8b8;
 }
 
 .calculos1 hr{
@@ -483,8 +496,12 @@ header{
     grid-template-columns: 50% 50%;
     gap: 20px;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     width: 550px;
+}
+
+.estatura_peso div{
+    margin-bottom: 40px;
 }
 
 .calculos1 button{
@@ -550,6 +567,7 @@ header{
     border-style: none;
     width: auto;
     margin: auto;
+    margin-top: 30px;
 }
 
 .tablas td{

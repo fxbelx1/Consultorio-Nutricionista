@@ -247,7 +247,7 @@
                 <form action="pruebas.php" method="POST" class="cons_form">
                     <div class="calculos1">
                         <div>
-                            <h1>IMC</h1>
+                            <h1 id="siguiente">IMC</h1>
                             <p id="imc">0</p>
                         </div>
 
@@ -265,30 +265,18 @@
                             <hr>
                             <h1>KCAL necesarias para la dieta:</h1>
                             <p id="kcal">0</p>
-                            <a href="#">realizar distribución</a>
+                            <a href="#siguiente" id="oculto"><i class="fa-solid fa-chevron-down" style="margin-right: 5px; font-size: 14px;"></i> siguiente </a>
+
+                            <script>
+                                $("#oculto").click(function(){
+                                    $("#oculto").css("display", "none");
+                                });
+                            </script>
+
                         </div>
                     </div>
                     <!------------------------ CALCULOS ------------------------->
-                    <br><br>
                     <div class="calculos2">
-                        <script>
-                            function macro(){
-                                var hco = (document.getElementById("p_hco").value)/100;
-                                var lip = (document.getElementById("p_lip").value)/100;
-                                var pro = (document.getElementById("p_pro").value)/100;
-                                
-                                if((hco + lip + pro)<=1){
-                                    document.getElementById("hco_p").innerHTML = (hco*kcal).toFixed(2);
-                                    document.getElementById("lip_p").innerHTML = (lip*kcal).toFixed(2);
-                                    document.getElementById("pro_p").innerHTML = (pro*kcal).toFixed(2);
-
-                                    document.getElementById("hco_g").innerHTML = ((hco*kcal)/4).toFixed(2);
-                                    document.getElementById("lip_g").innerHTML = ((lip*kcal)/9).toFixed(2);
-                                    document.getElementById("pro_g").innerHTML = ((pro*kcal)/4).toFixed(2);
-                                }
-                            }
-                        </script>
-
                         <!------------------------ PORCENTAJES ------------------------->
                         <table class="tablas">    
                             <tr>
@@ -322,6 +310,22 @@
                                 <td><p id="pro_g" style="width: 100px;">0</p></td>
                             </tr>  
                         </table>
+
+                        <script>
+                            $("#p_hco, #p_lip, #p_pro").on("input", function(){
+                                /* porcentaje de kcal para hco, lipidos y proteinas */
+                                $("#hco_p").text(((($("#p_hco").val())/100)*($("#kcal").text())).toFixed(2));
+                                $("#lip_p").text(((($("#p_lip").val())/100)*($("#kcal").text())).toFixed(2));
+                                $("#pro_p").text(((($("#p_pro").val())/100)*($("#kcal").text())).toFixed(2));
+
+                                /* lo mismo pero en gramos */
+                                $("#hco_g").text((((($("#p_hco").val())/100)*($("#kcal").text()))/4).toFixed(2));
+                                $("#lip_g").text((((($("#p_lip").val())/100)*($("#kcal").text()))/9).toFixed(2));
+                                $("#pro_g").text((((($("#p_pro").val())/100)*($("#kcal").text()))/4).toFixed(2));
+                                
+                            });
+                        </script>
+
                         <!------------------------ PORCENTAJES ------------------------->
                     </div>
 
