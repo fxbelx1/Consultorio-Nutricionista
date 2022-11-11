@@ -26,52 +26,10 @@
     <!------------------------ JQUERY ------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<!------------------------ SCRIPT ------------------------->
-
-    <!--<script>
-        function calculos(){
-
-            /* Aqui agregar el cambio de display none al div de abajo */
-            /**********IMC**********/
-            /* */
-            var peso = document.getElementById("peso").value;
-            var estatura = document.getElementById("es").value;
-
-            var imc = peso/estatura;
-            document.getElementById("imc").innerHTML = imc.toFixed(2);
-
-            var texto = document.getElementById("sexo").innerHTML;
-            var s = texto.split(" ");
-            sexo = s[1];
-            edad = s[2];
-
-            /*console.log(s[1] + ", " + s[2]);*/
-
-            /**********GRASA**********/
-            if(sexo == "Hombre"){
-                var grasa = (1.2*imc) + (0.23*edad) - 10.8 - 5.4;
-                globalThis.kcal = (10*peso) + (6.25*(estatura*100)) - (5*edad) + 5;
-            }
-            else{
-                if(sexo == "Mujer"){
-                    var grasa = (1.2*imc) + (0.23*edad) - 5.4;
-                    globalThis.kcal = (10*peso) + (6.25*(estatura*100)) - (5*edad) - 161;
-                }
-            }
-
-            document.getElementById("grasa").innerHTML = grasa.toFixed(2) + " %";
-
-            /**********MASA**********/
-            var masa = peso - (grasa/100)*peso;
-            document.getElementById("masa").innerHTML = masa.toFixed(2) + " Kg";
-
-            /**********KCAL**********/
-            document.getElementById("kcal").innerHTML = kcal.toFixed(2) + " Kcal";
-        }
-    </script> -->
-
+    <!------------------------ SCRIPT ------------------------->
     <script>
 
+        // OPERACIONES IMC, MASA MUSCULAR, %GRASA Y KCAL
         $( document ).ready(function(){
             var grasa, kcal;
 
@@ -114,6 +72,7 @@
                 }
             });
         });
+        // OPERACIONES IMC, MASA MUSCULAR, %GRASA Y KCAL
     </script>
 <!------------------------ SCRIPT ------------------------->
 
@@ -244,7 +203,7 @@
 
 
                 <!------------------------ CALCULOS ------------------------->
-                <form action="pruebas.php" method="POST" class="cons_form">
+                <div class="cons_form">
                     <div class="calculos1">
                         <div>
                             <h1 id="siguiente">IMC</h1>
@@ -319,19 +278,71 @@
                                 $("#pro_p").text(((($("#p_pro").val())/100)*($("#kcal").text())).toFixed(2));
 
                                 /* lo mismo pero en gramos */
-                                $("#hco_g").text((((($("#p_hco").val())/100)*($("#kcal").text()))/4).toFixed(2));
-                                $("#lip_g").text((((($("#p_lip").val())/100)*($("#kcal").text()))/9).toFixed(2));
-                                $("#pro_g").text((((($("#p_pro").val())/100)*($("#kcal").text()))/4).toFixed(2));
-                                
+                                var hco_g = (((($("#p_hco").val())/100)*($("#kcal").text()))/4).toFixed(2);
+                                var lip_g = (((($("#p_lip").val())/100)*($("#kcal").text()))/9).toFixed(2);
+                                var pro_g = (((($("#p_pro").val())/100)*($("#kcal").text()))/4).toFixed(2);
+
+                                $("#hco_g").text(hco_g);
+                                $("#lip_g").text(lip_g);
+                                $("#pro_g").text(pro_g);
                             });
+
+                            //datos post
+                            var peso = $("#peso").val();
+                            var estatura = $("#es").val();
+                            var imc = $("#imc").text();
+                            var grasa = $("#grasa").text();
+                            var mm = $("#masa").text();
+                            var kcal = $("#kcal").text();
+
+                            //id paciente
+                            var url = window.location+'';
+                            var url_split = url.split("=");
+                            var id = url_split[1];
+                            //id paciente
+                            //datos post
+
+
+                            //Objeto con los data
+                            var data = {
+                                "peso" : peso,
+                                "estatura" : estatura,
+                                "imc" : imc,
+                                "grasa" : grasa,
+                                "mm" : mm,
+                                "kcal" : kcal,
+                                "id" : id,
+
+                                //creo que estas hay que sacarlas de la funcion
+                                "pro" : pro_g,
+                                "lip" : lip_g,
+                                "hco" : hco_g
+                            }
+
+
+                            // POST QUE GUARDA LOS DATOS DE LA CONSULTA
+                            // peso, estaura, imc, grasa, masa_mus, kcal, pro, lip, hco, id_paciente
+                            function consulta(){
+                                var i = document.getElementById("kcal").innerHTML;
+                                $.ajax({
+                                    type: "POST",
+                                    url: "pruebas.php",
+                                    data: {'param1' : 34},
+                                    success: function(respuesta){
+                                        //$("#respuesta").text(respuesta);
+                                        console.log(respuesta);
+                                    }
+                                });  
+                            }
+                            // POST QUE GUARDA LOS DATOS DE LA CONSULTA
+
                         </script>
 
                         <!------------------------ PORCENTAJES ------------------------->
                     </div>
-
-                    <br><br><br>
-                    <input type="submit" onclick="prueba()">
-                </form>
+                    <input type="submit" onclick="consulta()">
+                    <p id="respuesta">jhbjhg</p>
+                </div>
             </div>
         </div>
         <!------------------------ CALCULOS ANTROPOMETRICOS (DERECHA) ------------------------->
